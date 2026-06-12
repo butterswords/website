@@ -1,6 +1,6 @@
 ---
 date: '2026-06-12T13:22:14-07:00'
-draft: true
+draft: false
 title: 'About'
 ---
 Hello, my name is Nathan Butters. Feel free to call me “Nathan” or “Butters” as you see fit. Historically, ~50% of everyone I meet calls me “Butters” and I am happy to let you pick what works best for you. 
