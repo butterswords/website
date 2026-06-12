@@ -41,7 +41,7 @@ jobs:
         run: hugo --minify
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./butterswords/public
 
   deploy:
     environment:
