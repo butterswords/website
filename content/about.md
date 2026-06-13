@@ -31,7 +31,7 @@ Over the years I have been asked to define my values again and again. For work, 
 ### Non-negotiables for my career
 As part of my reflections during the pandemic I realized that I need to operate from a core set of non-negotiables for work so that I know when it's time to toss in the towel and move on. This came about when I realized that the quote I'd been living by was failing to help me make peace with where I was at:
 
-> "Do what you love or make sure what you do supports what you love." An old man on a beach in Florida in December 2006
+> "Do what you love or make sure what you do supports what you love." - An old man on a beach in Florida in December 2006
 
 It's a good piece of advice, flexible and affirming, and most of the time I think it can help you make good decisions about your career. However, when it comes down to it sometimes you need something more concrete to help you know if you're in the right place. So, I defined these non-negotiables as a way to gauge opportunities that present themselves to me. They are open-ended as well, and demand that I use them in the form of a question to find answers.
 * Do fulfilling work
@@ -54,11 +54,11 @@ Support one another with courage and compassion; prioritize the shared good to a
 ### Quotes that speak to the core of who I am
 > “Work smarter, not harder; do not balk at hard work.” - Nathan Butters [^1] 
 
-> “True heroism is remarkably sober, very undramatic. It is not the urge to surpass all others at whatever cost, but the urge to serve others at whatever cost.” ~Arthur Ashe [^ashe]
+> “True heroism is remarkably sober, very undramatic. It is not the urge to surpass all others at whatever cost, but the urge to serve others at whatever cost.” - Arthur Ashe [^ashe]
 
-> “Moral courage is the most valuable and usually the most absent characteristic in men.” ~George S. Patton [^patton]
+> “Moral courage is the most valuable and usually the most absent characteristic in men.” - George S. Patton [^patton]
 
-> “Words are pale shadows of forgotten names. As names have power, words have power. Words can light fires in the minds of men. Words can wring tears from the hardest hearts.” ~Patrick Rothfuss, Name of the Wind [^rothfuss]
+> “Words are pale shadows of forgotten names. As names have power, words have power. Words can light fires in the minds of men. Words can wring tears from the hardest hearts.” - Patrick Rothfuss, Name of the Wind [^rothfuss]
 
 ## On credibility, reliability, competence, and positive descriptors
 Ultimately, I don't like trying to convince people who I am. There's not much people can say to me that makes me think, "Oh yeah, they are totally reliable... or I can trust they're competent because they say they are." If I thought that would work I probably wouldn't put the energy into creating a space for people to look at my work and discover who I am or how I operate. Instead, I hope that you'll take the time to get to know me and judge for yourself what descriptors I merit.
