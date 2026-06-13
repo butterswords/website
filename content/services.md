@@ -1,7 +1,7 @@
 ---
-date: '2026-06-12T16:51:40-07:00'
+date: '2026-06-12T17:12:06-07:00'
 draft: false
-title: 'Projects'
+title: 'Services'
 ---
 <style>
 .blink-construction {
