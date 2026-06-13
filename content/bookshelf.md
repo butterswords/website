@@ -1,31 +1,20 @@
 ---
 date: '2026-01-01T16:51:29-07:00'
 draft: false
-title: 'Library'
+title: 'bookshelf'
 ---
 I was not always a reader. Growing up I actually loathed reading. If I could find a way to *do* something to learn, I would much rather be active than sedentary. I learned to love reading in 6th grade and for decades I read mostly fiction. Recently, as I've started to take a greater interest in finding ways to improve the world around me, rather than just survive it, I have returned to reading as a source of continual exploration and growth. 
 
 > **Note**
 > Where possible I link directly to the publisher for books, or to the wikipedia page. If you would like to read them I recommend checking your local library, supporting a local bookstore, or ordering through the author's site.
 
-<style>
-.blink-construction {
-    animation: blink 1s steps(1) infinite;
-    font-weight: bold;
-    color: #d9534f;
-}
-@keyframes blink {
-    67% { opacity: 0; }
-}
-</style>
-
-<div align="center">
-    <h2>🚧 <span class="blink-construction">PAGE UNDER CONSTRUCTION</span> 🚧</h2>
-    <p>We are currently building this section. Please check back later!</p>
-</div>
-
 
 # Nonfiction
+
+## My Publications (Chronologically)
+* [*Position: In-House Evaluation Is Not Enough. Towards Robust Third-Party Evaluation and Flaw Disclosure for General-Purpose AI*](https://openreview.net/forum?id=ACzL62Jp4E), 2025
+* [*Exploring Subjective Notions of Explainability through Counterfactual Visualization of Sentiment Analysis*](https://www.computer.org/csdl/proceedings-article/beliv/2024/284600a015/22a0FIBygUM), 2024
+* [*Book Review: Big Data, Big Design: Why Designers Should Care about Artificial Intelligence*](https://www.tandfonline.com/eprint/WNEPYR3THRKVM8TDQNAW/full?target=10.1080/17547075.2023.2213523), 2023
 
 ## Critical Reads
 * [*Sand Talk; How Indigenous Thinking Can Save the World*](https://www.harpercollins.com/products/sand-talk-tyson-yunkaporta), Tyson Yunkaporta
