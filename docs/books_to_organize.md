@@ -26,7 +26,6 @@ Delete this file once everything below has been migrated.
 ## My Publications (Chronologically)
 * [*Position: In-House Evaluation Is Not Enough. Towards Robust Third-Party Evaluation and Flaw Disclosure for General-Purpose AI*](https://openreview.net/forum?id=ACzL62Jp4E), 2025
 * [*Exploring Subjective Notions of Explainability through Counterfactual Visualization of Sentiment Analysis*](https://www.computer.org/csdl/proceedings-article/beliv/2024/284600a015/22a0FIBygUM), 2024
-* [*Book Review: Big Data, Big Design: Why Designers Should Care about Artificial Intelligence*](https://www.tandfonline.com/eprint/WNEPYR3THRKVM8TDQNAW/full?target=10.1080/17547075.2023.2213523), 2023
 
 ## Critical Reads
 * [*Sand Talk; How Indigenous Thinking Can Save the World*](https://www.harpercollins.com/products/sand-talk-tyson-yunkaporta), Tyson Yunkaporta
