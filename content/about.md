@@ -1,5 +1,5 @@
 ---
-date: '2026-06-12T13:22:14-07:00'
+#date: '2026-06-12T13:22:14-07:00'
 draft: false
 title: 'About'
 ---
@@ -13,7 +13,7 @@ In general, I try to make a little space to acknowledge who I am during conversa
 
 ## What are my known biases (and privileges)?
 
-I am a cis-gender, straight, white man from a middle class family in the United States of America. I was raised Catholic. I attended a public charter high school, [Illinois Math and Science Academy (IMSA)](https://www.imsa.edu), and private colleges for my undergraduate degree, [Illinois Wesleyan University (IWU)](https://www.iwu.edu/), and my Master's, [Yale Divinity School (YDS)](https://divinity.yale.edu/). I have worked for tech giants for the last 9+ years: [AWS](https://aws.amazon.com/); [Tableau](https://www.tableau.com); and [Salesforce](https://www.salesforce.com). I've founded a non-profit to help navigate the changes our society faces: [AI Risk and Vulnerability Alliance](https://www.avidml.org/arva)
+I am a cis-gender, straight, white man from a middle class family in the United States of America. I was raised Catholic. I attended a public charter high school, [Illinois Math and Science Academy (IMSA)](https://www.imsa.edu), and private colleges for my undergraduate degree, [Illinois Wesleyan University (IWU)](https://www.iwu.edu/), and my Master's, [Yale Divinity School (YDS)](https://divinity.yale.edu/). I have worked for tech giants for the last 9+ years: [AWS](https://aws.amazon.com/); [Tableau](https://www.tableau.com); and [Salesforce](https://www.salesforce.com). I also founded a non-profit to help navigate the changes our society faces: [AI Risk and Vulnerability Alliance](https://www.avidml.org/arva).
 
 I point these things out because they highlight how privileged I am by birth and the choices I've made throughout my life. They formed who I am and I cannot change them as they are now the historical "facts" of my life. Others may judge me in particular ways based on this information and I will not say they are wrong to do so.
 
@@ -52,19 +52,25 @@ I am passionate about many things, too many to list on a page without it becomin
 Support one another with courage and compassion; prioritize the shared good to achieve great success.
 
 ### Quotes that speak to the core of who I am
-> “Work smarter, not harder; do not balk at hard work.” - Nathan Butters [^1] 
+> Work smarter, not harder; do not balk at hard work.
 
-> “True heroism is remarkably sober, very undramatic. It is not the urge to surpass all others at whatever cost, but the urge to serve others at whatever cost.” - Arthur Ashe [^ashe]
+~ Nathan Butters, 2010 [^1] 
 
-> “Moral courage is the most valuable and usually the most absent characteristic in men.” - George S. Patton [^patton]
+> True heroism is remarkably sober, very undramatic. It is not the urge to surpass all others at whatever cost, but the urge to serve others at whatever cost.
 
-> “Words are pale shadows of forgotten names. As names have power, words have power. Words can light fires in the minds of men. Words can wring tears from the hardest hearts.” - Patrick Rothfuss, Name of the Wind [^rothfuss]
+~ Arthur Ashe [^ashe]
+
+> Moral courage is the most valuable and usually the most absent characteristic in men.
+
+~ George S. Patton [^patton]
+
+> Words are pale shadows of forgotten names. As names have power, words have power. Words can light fires in the minds of men. Words can wring tears from the hardest hearts.
+
+~ Patrick Rothfuss, Name of the Wind [^rothfuss]
 
 ## On credibility, reliability, competence, and positive descriptors
 Ultimately, I don't like trying to convince people who I am. There's not much people can say to me that makes me think, "Oh yeah, they are totally reliable... or I can trust they're competent because they say they are." If I thought that would work I probably wouldn't put the energy into creating a space for people to look at my work and discover who I am or how I operate. Instead, I hope that you'll take the time to get to know me and judge for yourself what descriptors I merit.
 
-____________
-#### Footnotes
 [^1]: Some additional context: I am aware people misuse the first half of this phrase all the time. Sometimes you’re working as efficiently as possible. Sometimes you don't have control over your work and the only way to get the job done is to work harder. That’s why both sides of the quote are so important.
 [^ashe]: Here's the [Wikipedia Article on Arthur Ashe](https://en.wikipedia.org/wiki/Arthur_Ashe)
 [^patton]: Here's the [Wikipedia Article on Patton](https://en.wikipedia.org/wiki/George_S._Patton) I recognize the person as being problematic, more as I've gotten older, yet the quote remains powerful to me as a cornerstone.

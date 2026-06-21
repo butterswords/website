@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="220" viewBox="173.28 47.00 32.00 55.00">
+  <defs>
+    <radialGradient id="grad" cx="189.28" cy="74.50" r="31.82" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#FDB515"/>
+      <stop offset="60%"  stop-color="#4A6070"/>
+      <stop offset="100%" stop-color="#4A6070"/>
+    </radialGradient>
+  </defs>
+  <line x1="183.78" y1="55.00" x2="194.78" y2="55.00" stroke="url(#grad)" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="185.78" y1="56.00" x2="185.78" y2="64.00" stroke="url(#grad)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M185.78,56.00 A7.00,2.00 0 0,1 185.78,60.00" fill="none" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M185.78,60.00 A7.00,2.00 0 0,1 185.78,64.00" fill="none" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="181.28" y1="65.00" x2="197.28" y2="65.00" stroke="url(#grad)" stroke-width="3" stroke-linecap="round"/>
+  <line x1="183.28" y1="66.00" x2="195.28" y2="66.00" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="183.28" y1="66.00" x2="183.28" y2="75.00" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="195.28" y1="66.00" x2="195.28" y2="75.00" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="189.28" y1="70.00" x2="189.28" y2="75.00" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="183.28" y1="75.00" x2="189.28" y2="81.00" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="189.28" y1="75.00" x2="195.28" y2="81.00" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="195.28" y1="75.00" x2="191.28" y2="77.00" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="187.28" y1="79.00" x2="183.28" y2="81.00" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="183.28" y1="81.00" x2="183.28" y2="90.00" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="195.28" y1="81.00" x2="195.28" y2="90.00" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="189.28" y1="81.00" x2="189.28" y2="86.00" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="183.28" y1="90.00" x2="189.28" y2="94.00" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="195.28" y1="90.00" x2="189.28" y2="94.00" stroke="url(#grad)" stroke-width="2" stroke-linecap="round"/>
+</svg>

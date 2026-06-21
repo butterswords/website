@@ -1,0 +1,75 @@
+{{ define "main" }}
+<div class="mx-auto my-10 max-w-6xl px-4 sm:px-6 lg:px-8">
+    <h1 class="title text-4xl font-bold mb-8 text-tlgray-800">{{ .Title }}</h1>
+    <div class="content prose prose-lg max-w-none text-tlgray-700 mb-10">{{ .Content }}</div>
+
+    {{ $categories := slice "Formative" "Inspirations" "In Progress" "Backlog" "Recommendations" "Reviews" }}
+    {{ $allPages := .Pages.ByWeight }}
+    {{ $uncategorized := where .Pages "Params.category" "not in" $categories }}
+
+    {{ if gt (len $allPages) 0 }}
+    <div id="bookshelf-filters" class="flex flex-wrap gap-2 mb-8">
+        <button type="button" class="bookshelf-filter-btn is-active px-4 py-2 text-sm font-semibold border border-blue-600 bg-blue-600 text-white transition-colors" data-filter="all">
+            All
+        </button>
+        {{ range $categories }}
+            {{ $cat := . }}
+            {{ if gt (len (where $.Pages "Params.category" $cat)) 0 }}
+            <button type="button" class="bookshelf-filter-btn px-4 py-2 text-sm font-semibold border border-tlgray-400 text-tlgray-700 hover:bg-tlgray-200/40 transition-colors" data-filter="{{ $cat }}">
+                {{ $cat }}
+            </button>
+            {{ end }}
+        {{ end }}
+        {{ if gt (len $uncategorized) 0 }}
+        <button type="button" class="bookshelf-filter-btn px-4 py-2 text-sm font-semibold border border-tlgray-400 text-tlgray-700 hover:bg-tlgray-200/40 transition-colors" data-filter="Uncategorized">
+            Uncategorized
+        </button>
+        {{ end }}
+    </div>
+
+    <div id="bookshelf-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {{ range $allPages }}
+        {{ .Render "summary" }}
+        {{ end }}
+    </div>
+    {{ else }}
+    <p class="text-tlgray-500 italic">
+        No book pages yet. Add one with
+        <code>hugo new --kind book_review_template content/bookshelf/your-book-slug.md</code>.
+    </p>
+    {{ end }}
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+{{ if gt (len .Pages) 0 }}
+<script>
+(function () {
+  var filterBar = document.getElementById('bookshelf-filters');
+  var grid = document.getElementById('bookshelf-grid');
+  if (!filterBar || !grid) return;
+  var buttons = filterBar.querySelectorAll('.bookshelf-filter-btn');
+  var cards = grid.querySelectorAll('.bookshelf-card');
+
+  function setActive(activeBtn) {
+    buttons.forEach(function (b) {
+      b.classList.remove('is-active', 'bg-blue-600', 'text-white', 'border-blue-600');
+      b.classList.add('border-tlgray-400', 'text-tlgray-700');
+    });
+    activeBtn.classList.add('is-active', 'bg-blue-600', 'text-white', 'border-blue-600');
+    activeBtn.classList.remove('border-tlgray-400', 'text-tlgray-700');
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setActive(btn);
+      var filter = btn.dataset.filter;
+      cards.forEach(function (card) {
+        card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+{{ end }}
+{{ end }}

@@ -1,3 +1,3 @@
-[submodule "butterswords/themes/PaperMod"]
-	path = butterswords/themes/PaperMod
-	url = https://github.com/adityatelange/hugo-PaperMod.git
+[submodule "themes/tella"]
+	path = themes/tella
+	url = https://github.com/opera7133/tella.git
