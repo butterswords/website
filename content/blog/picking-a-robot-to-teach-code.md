@@ -10,6 +10,9 @@ tags: [
     "robots",
     "education"
 ]
+categories: []
+series: []
+weight: 100
 ---
 From the moment I knew we were going to have a kid, before we knew the gender, I've been thinking of ways to get them to engage with robots. I love robots. I want to share that love with those around me. This is not a new thing for me. Years ago I bought a [Wonder Workshop Dash](https://www.makewonder.com/robots/dash/) robot for my nephew. He didn't get into it. It was likely not something him and his father wanted to invest the time in to figure out. I realize I gave them a gift that I would want more than something I knew they'd enjoy. Still, it looked like an amazing idea and one I have been carrying around as an idea for my own kids. I have watched that toy for years, looking to see if they made a version compatible with a younger age group. They have not. So, when my son was born I started looking for newer robots and wondered if I could justify getting one for him.
 

@@ -6,6 +6,9 @@ image: https://facctconference.org/static/images/2022tiger.png
 draft: false
 weight: 100
 author: "Nathan Butters"
+tags: ["FACCT","Conference"]
+categories: ["Notes"]
+series: []
 ---
 I took notes for myself during the CRAFT session on June 21st and have since realized that these may be more useful if shared broadly. Any mistakes are my own. I have removed contact information from here because I do not intend to share it without their permission. I’m sharing their names and their work because it is present on the [website for the workshop](https://sites.google.com/view/bdai-facct2022/home).
 
