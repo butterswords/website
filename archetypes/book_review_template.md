@@ -41,8 +41,9 @@ front matter above — nothing to add in the body for those.
 Delete this comment block before publishing.
 -->
 
-**TL;DR:** One-sentence verdict — would you tell a friend to read this,
-and why?
+<div class="bg-tlgray-200/40 border-l-4 border-blue-600 px-6 py-4 mb-8">
+<strong>TL;DR:</strong> One-sentence verdict — would you tell a friend to read this, and why?
+</div>
 
 ## Why I Picked This Up
 

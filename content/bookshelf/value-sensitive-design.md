@@ -1,7 +1,7 @@
 ---
 title: "Value Sensitive Design: Shaping Technology with Moral Imagination"
 date: '2026-06-21T20:34:14-07:00'
-draft: true
+draft: false
 author: "Batya Friedman and David G. Hendry"
 image: "https://mit-press-new-us.imgix.net/covers/9780262039536.jpg"
 category: "Backlog"
@@ -10,52 +10,17 @@ external_url: "https://mitpress.mit.edu/9780262039536/value-sensitive-design/"
 tags: []
 weight: 100
 ---
-
-<!--
-BOOK REVIEW TEMPLATE — one page per book.
-
-  hugo new --kind book_review_template content/bookshelf/book-slug.md
-
-Front matter:
-  - author        -> the BOOK's author (not you). Multiple authors: just
-                     write them out, e.g. "Catherine D'Ignazio and Lauren F. Klein".
-  - category      -> must be exactly one of the six the list page groups by:
-                       Formative       - shaped how you think; foundational
-                       Inspirations    - sparked ideas or direction
-                       In Progress     - currently reading
-                       Backlog         - want to read, haven't started
-                       Recommendations - worth recommending, maybe no full review yet
-                       Reviews         - has a full write-up below
-                     Anything else (or left blank) falls into an
-                     "Uncategorized" catch-all on the list page instead
-                     of disappearing silently.
-  - rating        -> free text, e.g. "4/5" or "Highly recommend". Leave
-                     blank for Backlog/In Progress entries.
-  - external_url  -> link to the publisher page or Wikipedia, matching
-                     the convention already used on /bookshelf/.
-
-`layouts/bookshelf/single.html` renders the category badge, author
-byline, rating, and the "View Book" button automatically from the
-front matter above — nothing to add in the body for those.
-
-Delete this comment block before publishing.
--->
-
-**TL;DR:** One-sentence verdict — would you tell a friend to read this,
-and why?
+<div class="bg-tlgray-200/40 border-l-4 border-blue-600 px-6 py-4 mb-8">
+<strong>TL;DR:</strong> Is this the same as Design Justice? Let's find out!!!
+</div>
 
 ## Why I Picked This Up
 
-What led you to this book — a recommendation, a citation chain, a
-gap you were trying to fill?
+When I picked up Design Justice, I also started looking at other books in a similar vein. This one came up immediately. I have not read it yet because I got sidetracked and never came back. It might be time to compare it to Design Justice and see where they are compatible.
 
 ## My Take
 
-<!-- For Backlog/In Progress entries, leave a short placeholder note
-     here instead (e.g. "Not started yet" / "Partway through, early
-     impressions: ..."). -->
-
-The actual review. What it argues, what landed, what didn't.
+Not started.
 
 ## Key Takeaways
 
@@ -64,5 +29,4 @@ The actual review. What it argues, what landed, what didn't.
 
 ## Recommendation
 
-Who should read this, and why — or what you'd want to know before
-deciding whether to pick it up.
+Anyone who is interested in Design Justice, if only to see another perspective.

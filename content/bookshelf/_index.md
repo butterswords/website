@@ -5,4 +5,4 @@ title: 'Bookshelf'
 author: "Nathan Butters"
 tags: ["index"]
 ---
-I was not always a reader. Growing up I actually loathed reading. If I could find a way to *do* something to learn, I would much rather be active than sedentary. I learned to love reading in 6th grade and for decades I read mostly fiction. Recently, as I've started to take a greater interest in finding ways to improve the world around me, rather than just survive it, I have returned to reading as a source of continual exploration and growth. 
+I was not always a reader. Growing up I actually loathed reading. If I could find a way to *do* something to learn, I would much rather be active than sedentary. I learned to love reading in 6th grade and for decades I read mostly fiction, when given the choice. Over the years, as I take a greater interest in finding ways to directly improve the world around me, rather than just survive it, I return to reading as a source of continual exploration and growth. 
