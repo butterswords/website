@@ -38,7 +38,7 @@ I built a custom designed holder for an Arccos Link. It looks a bit like a pager
 I wanted to see if I could learn how to build my own 3D prints. I love golf, and had been struggling to use the Link well. So, I decided to address several issues at once by designing and building a holder for the Link that would make it more useful to me.
 
 ### Inspiration and early learnings
-As I mentioned before, Arccos offers an option for $25. I figured I could build one for much cheaper. So I challenged myself to do so. The first 4 prototypes had significant issues, as I learned how to translate 3D designs into 3D prints. Some of the core learnings:
+As I mentioned before, Arccos offers an option for $25. I figured I could build one for much cheaper. So I challenged myself to do so. The first 4 prototypes had significant issues. Through them I learned a lot about how to translate 3D designs into 3D prints. Some of the core learnings:
 1. Overhangs are always going to provide interesting challenges
 2. More material does not mean more strength
 3. Usage and human factors must always come first (I knew this for software but did not realize just how shocking the difference is in physical products.)

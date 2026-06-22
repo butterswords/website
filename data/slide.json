@@ -1,7 +1,8 @@
 [
   {
     "title": "Learn the lessons others have failed to learn",
-    "image": "img/slide/learn-the-lessons.png"
+    "image": "img/slide/learn-the-lessons.png",
+    "color": "text-black"
   },
   {
     "title": "The boundaries are permeable and the problems vast.",
