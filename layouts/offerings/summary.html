@@ -16,7 +16,7 @@
                 {{ .Title }}
             </h2>
             <p class="text-tlgray-400 text-sm leading-relaxed line-clamp-3 mb-4 grow">
-                {{ .Params.tagline | default (.Description | default .Summary) | truncate 120 }}
+                {{ .Params.tagline | default .Description }}
             </p>
             <div class="mt-auto pt-4 items-center text-sm font-semibold text-blue-600 group-hover:translate-x-1 transition-transform inline-flex">
                 Learn More

@@ -29,7 +29,7 @@
             <p class="text-sm text-tlgray-500 mb-3">by {{ . }}</p>
             {{ end }}
             <p class="text-tlgray-400 text-sm leading-relaxed line-clamp-3 mb-4 grow">
-                {{ .Description | default .Summary | truncate 120 }}
+                {{ .Description }}
             </p>
             {{ with .Params.rating }}
             <p class="text-xs font-semibold text-tlgray-600 mt-auto">{{ . }}</p>
