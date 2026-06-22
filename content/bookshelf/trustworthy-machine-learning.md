@@ -4,7 +4,7 @@ date: '2026-06-21T20:35:06-07:00'
 draft: true
 author: "Kush R. Varshney"
 image: "http://www.trustworthymachinelearning.com/trustworthymachinelearning.png"
-category: "Recommendations"
+category: "Inspirations"
 rating: ""
 external_url: "https://www.trustworthymachinelearning.com/"
 tags: []
@@ -63,3 +63,6 @@ The actual review. What it argues, what landed, what didn't.
 - 
 
 ## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

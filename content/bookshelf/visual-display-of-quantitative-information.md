@@ -4,7 +4,7 @@ date: '2026-06-22T10:11:51-07:00'
 draft: true
 author: "Edward R. Tufte"
 image: "https://www.edwardtufte.com/wp-content/uploads/2023/09/edward-tufte-visual-display-of-quantitative-information.jpg"
-category: "Recommendations"
+category: "Formative"
 rating: ""
 external_url: "https://www.edwardtufte.com/book/the-visual-display-of-quantitative-information/"
 tags: []
@@ -55,4 +55,14 @@ gap you were trying to fill?
      here instead (e.g. "Not started yet" / "Partway through, early
      impressions: ..."). -->
 
-The actual review. What it ar
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

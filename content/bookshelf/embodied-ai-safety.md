@@ -4,7 +4,7 @@ date: '2026-06-21T20:31:40-07:00'
 draft: true
 author: "Philip Koopman"
 image: "https://substackcdn.com/image/fetch/$s_!rgAK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffd513647-a8a3-462f-8003-a73dd878b8cd_1081x1622.jpeg"
-category: "Recommendations"
+category: "Backlog"
 rating: ""
 external_url: "https://philkoopman.substack.com/p/my-new-book-embodied-ai-safety"
 tags: []
@@ -51,4 +51,18 @@ gap you were trying to fill?
 
 ## My Take
 
-<!-- For Backlog/In Progress entries, leave a 
+<!-- For Backlog/In Progress entries, leave a short placeholder note
+     here instead (e.g. "Not started yet" / "Partway through, early
+     impressions: ..."). -->
+
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

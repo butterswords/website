@@ -4,7 +4,7 @@ date: '2026-06-21T20:35:46-07:00'
 draft: true
 author: "Karen Colbert"
 image: "https://lirp.cdn-website.com/5b4ca855/dms3rep/multi/opt/Karen_Colbert_Algorithm-Education_Book-be66d0bc-1920w.jpg"
-category: "Recommendations"
+category: "Reviews"
 rating: ""
 external_url: "https://www.karencolbert.com/book"
 tags: []
@@ -55,4 +55,14 @@ gap you were trying to fill?
      here instead (e.g. "Not started yet" / "Partway through, early
      impressions: ..."). -->
 
-The actual review. What it ar
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

@@ -57,4 +57,12 @@ gap you were trying to fill?
 
 The actual review. What it argues, what landed, what didn't.
 
-## Key Takea
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

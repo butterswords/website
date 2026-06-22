@@ -4,7 +4,7 @@ date: '2026-06-21T20:36:01-07:00'
 draft: true
 author: "Patricia Hill Collins"
 image: "https://images.routledge.com/common/jackets/crclarge/978103215/9781032157832.jpg"
-category: "Recommendations"
+category: "Backlog"
 rating: ""
 external_url: "https://www.routledge.com/Black-Feminist-Thought-30th-Anniversary-Edition-Knowledge-Consciousness-and-the-Politics-of-Empowerment/Collins/p/book/9781032157832"
 tags: []
@@ -52,4 +52,17 @@ gap you were trying to fill?
 ## My Take
 
 <!-- For Backlog/In Progress entries, leave a short placeholder note
-     here instead (e.g. "
+     here instead (e.g. "Not started yet" / "Partway through, early
+     impressions: ..."). -->
+
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

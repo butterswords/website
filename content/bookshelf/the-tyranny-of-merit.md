@@ -4,7 +4,7 @@ date: '2026-06-22T10:12:25-07:00'
 draft: true
 author: "Michael J. Sandel"
 image: "https://cdn.penguin.co.uk/dam-assets/books/9780141991177/9780141991177-jacket-large.jpg"
-category: "Recommendations"
+category: "Reviews"
 rating: ""
 external_url: "https://us.macmillan.com/books/9781250800060/thetyrannyofmerit/"
 tags: []
@@ -55,4 +55,14 @@ gap you were trying to fill?
      here instead (e.g. "Not started yet" / "Partway through, early
      impressions: ..."). -->
 
-The actual review. What it argues, what 
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

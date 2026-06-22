@@ -4,7 +4,7 @@ date: '2026-06-22T10:10:51-07:00'
 draft: true
 author: "Nicole Perlroth"
 image: "https://covers.openlibrary.org/b/id/10595574-L.jpg"
-category: "Recommendations"
+category: "Inspirations"
 rating: ""
 external_url: "https://thisishowtheytellmetheworldends.com/"
 tags: []
@@ -62,4 +62,7 @@ The actual review. What it argues, what landed, what didn't.
 - 
 - 
 
-## Recommen
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

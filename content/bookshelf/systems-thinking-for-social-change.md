@@ -4,7 +4,7 @@ date: '2026-06-21T20:32:50-07:00'
 draft: true
 author: "David Peter Stroh"
 image: "https://www.chelseagreen.com/wp-content/uploads/6836f12d7f0d6.jpg"
-category: "Recommendations"
+category: "Backlog"
 rating: ""
 external_url: "https://www.chelseagreen.com/product/systems-thinking-for-social-change/"
 tags: []
@@ -53,4 +53,16 @@ gap you were trying to fill?
 
 <!-- For Backlog/In Progress entries, leave a short placeholder note
      here instead (e.g. "Not started yet" / "Partway through, early
-     imp
+     impressions: ..."). -->
+
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

@@ -4,7 +4,7 @@ date: '2026-06-22T10:09:30-07:00'
 draft: true
 author: "Tyson Yunkaporta"
 image: "https://covers.openlibrary.org/b/id/10149929-L.jpg"
-category: "Recommendations"
+category: "Formative"
 rating: ""
 external_url: "https://www.harpercollins.com/products/sand-talk-tyson-yunkaporta"
 tags: []
@@ -57,4 +57,12 @@ gap you were trying to fill?
 
 The actual review. What it argues, what landed, what didn't.
 
-## 
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

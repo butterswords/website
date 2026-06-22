@@ -4,7 +4,7 @@ date: '2026-06-21T20:34:34-07:00'
 draft: true
 author: "Nick Couldry and Ulises A. Mejias"
 image: "https://colonizedbydata.com/wp-content/uploads/2018/12/costs-cover-199x300.jpg"
-category: "Recommendations"
+category: "Backlog"
 rating: ""
 external_url: "https://colonizedbydata.com/"
 tags: []
@@ -55,4 +55,14 @@ gap you were trying to fill?
      here instead (e.g. "Not started yet" / "Partway through, early
      impressions: ..."). -->
 
-The actual review. What it argue
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

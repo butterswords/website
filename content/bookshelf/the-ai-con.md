@@ -4,7 +4,7 @@ date: '2026-06-21T20:32:21-07:00'
 draft: true
 author: "Emily M. Bender and Alex Hanna"
 image: "https://cdn.penguin.co.uk/dam-assets/books/9781847928610/9781847928610-jacket-large.jpg"
-category: "Recommendations"
+category: "Reviews"
 rating: ""
 external_url: "https://thecon.ai/"
 tags: []
@@ -55,4 +55,14 @@ gap you were trying to fill?
      here instead (e.g. "Not started yet" / "Partway through, early
      impressions: ..."). -->
 
-The actual review. What it argues, what landed,
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

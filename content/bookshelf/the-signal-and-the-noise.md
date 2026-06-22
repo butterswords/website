@@ -4,7 +4,7 @@ date: '2026-06-22T10:12:12-07:00'
 draft: true
 author: "Nate Silver"
 image: "https://images2.penguinrandomhouse.com/cover/9780143125082"
-category: "Recommendations"
+category: "Inspirations"
 rating: ""
 external_url: "https://www.penguinrandomhouse.com/books/305826/the-signal-and-the-noise-by-nate-silver/"
 tags: []
@@ -55,4 +55,14 @@ gap you were trying to fill?
      here instead (e.g. "Not started yet" / "Partway through, early
      impressions: ..."). -->
 
-The actual review. What it argues, wha
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

@@ -4,7 +4,7 @@ date: '2026-06-21T20:33:55-07:00'
 draft: true
 author: "Pedro Domingos"
 image: "https://www.hachettebookgroup.com/wp-content/uploads/2024/01/9780465061921.jpg"
-category: "Recommendations"
+category: "Inspirations"
 rating: ""
 external_url: "https://en.wikipedia.org/wiki/The_Master_Algorithm"
 tags: []
@@ -55,4 +55,14 @@ gap you were trying to fill?
      here instead (e.g. "Not started yet" / "Partway through, early
      impressions: ..."). -->
 
-The actual review. What it ar
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

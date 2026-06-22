@@ -4,7 +4,7 @@ date: '2026-06-22T10:09:38-07:00'
 draft: true
 author: "Tyson Yunkaporta"
 image: "https://cdn2.penguin.com.au/covers/original/9781922790958.jpg"
-category: "Recommendations"
+category: "Inspirations"
 rating: ""
 external_url: "https://www.textpublishing.com.au/books/right-story-wrong-story-9781922790958"
 tags: []
@@ -55,4 +55,14 @@ gap you were trying to fill?
      here instead (e.g. "Not started yet" / "Partway through, early
      impressions: ..."). -->
 
-The actual review. What it argues, what landed, what
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

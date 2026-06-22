@@ -62,4 +62,7 @@ The actual review. What it argues, what landed, what didn't.
 - 
 - 
 
-#
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

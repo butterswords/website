@@ -4,7 +4,7 @@ date: '2026-06-21T20:32:09-07:00'
 draft: true
 author: "Milton Friedman"
 image: "https://tmm.chicagodistributioncenter.com/IsbnImages/9780226734798.jpg"
-category: "Recommendations"
+category: "Backlog"
 rating: ""
 external_url: "https://press.uchicago.edu/ucp/books/book/chicago/C/bo68666099.html"
 tags: []
@@ -61,3 +61,8 @@ The actual review. What it argues, what landed, what didn't.
 
 - 
 - 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

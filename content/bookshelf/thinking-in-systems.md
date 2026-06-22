@@ -4,7 +4,7 @@ date: '2026-06-21T20:33:43-07:00'
 draft: true
 author: "Donella H. Meadows"
 image: "https://www.chelseagreen.com/wp-content/uploads/6836f236ac61f.jpg"
-category: "Recommendations"
+category: "Formative"
 rating: ""
 external_url: "https://www.chelseagreen.com/product/thinking-in-systems/"
 tags: []
@@ -61,3 +61,8 @@ The actual review. What it argues, what landed, what didn't.
 
 - 
 - 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

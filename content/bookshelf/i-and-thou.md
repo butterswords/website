@@ -4,7 +4,7 @@ date: '2026-06-22T10:11:16-07:00'
 draft: true
 author: "Martin Buber"
 image: "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9780684717258/i-and-thou-9780684717258_lg.jpg"
-category: "Recommendations"
+category: "Formative"
 rating: ""
 external_url: "https://en.wikipedia.org/wiki/I_and_Thou"
 tags: []
@@ -59,4 +59,10 @@ The actual review. What it argues, what landed, what didn't.
 
 ## Key Takeaways
 
-- 
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

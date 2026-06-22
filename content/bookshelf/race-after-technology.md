@@ -4,7 +4,7 @@ date: '2026-06-22T10:10:33-07:00'
 draft: true
 author: "Ruha Benjamin"
 image: "https://images.squarespace-cdn.com/content/v1/5bbd85f3809d8e6a1a3c5c9e/1539747351919-A8XPCT283K2SQZI80UCZ/Race+After+Tech_Cover.jpg"
-category: "Recommendations"
+category: "Inspirations"
 rating: ""
 external_url: "https://www.ruhabenjamin.com/race-after-technology"
 tags: []
@@ -55,4 +55,14 @@ gap you were trying to fill?
      here instead (e.g. "Not started yet" / "Partway through, early
      impressions: ..."). -->
 
-The act
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

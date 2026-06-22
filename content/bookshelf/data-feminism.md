@@ -4,7 +4,7 @@ date: '2026-06-21T20:35:20-07:00'
 draft: true
 author: "Catherine D'Ignazio and Lauren F. Klein"
 image: "https://mit-press-new-us.imgix.net/covers/9780262547185.jpg"
-category: "Recommendations"
+category: "Back Log"
 rating: ""
 external_url: "https://mitpress.mit.edu/9780262547185/data-feminism/"
 tags: []
@@ -60,4 +60,9 @@ The actual review. What it argues, what landed, what didn't.
 ## Key Takeaways
 
 - 
-- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

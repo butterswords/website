@@ -4,7 +4,7 @@ date: '2026-06-22T10:11:27-07:00'
 draft: true
 author: "Søren Kierkegaard"
 image: "https://pup-assets.imgix.net/onix/images/9780691020280.jpg"
-category: "Recommendations"
+category: "Formative"
 rating: ""
 external_url: "https://en.wikipedia.org/wiki/The_Sickness_unto_Death"
 tags: []
@@ -62,4 +62,7 @@ The actual review. What it argues, what landed, what didn't.
 - 
 - 
 
-## Recommendati
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

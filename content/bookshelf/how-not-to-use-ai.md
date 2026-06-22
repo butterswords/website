@@ -4,7 +4,7 @@ date: '2026-06-21T20:31:52-07:00'
 draft: true
 author: "Abi Awomosu"
 image: "https://substackcdn.com/image/fetch/$s_!Bxwm!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8de38a38-1251-406a-8d6e-c3de5ef06f83_760x900.png"
-category: "Recommendations"
+category: "Backlog"
 rating: ""
 external_url: "https://uk.bookshop.org/p/books/how-not-to-use-ai-abi-awomosu/78bf0b4722361eb9?ean=9781919191003&next=t"
 tags: []
@@ -51,4 +51,18 @@ gap you were trying to fill?
 
 ## My Take
 
-<!-- For Backlog/In Progress entries, leave 
+<!-- For Backlog/In Progress entries, leave a short placeholder note
+     here instead (e.g. "Not started yet" / "Partway through, early
+     impressions: ..."). -->
+
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

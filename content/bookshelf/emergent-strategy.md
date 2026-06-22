@@ -4,7 +4,7 @@ date: '2026-06-21T20:33:03-07:00'
 draft: true
 author: "adrienne maree brown"
 image: "https://commonslibrary.org/wp-content/uploads/Emergent-Strategy-Shaping-change-Changing-worlds-adrienne-maree-brown.jpg"
-category: "Recommendations"
+category: "Backlog"
 rating: ""
 external_url: "https://www.akpress.org/emergentstrategy.html"
 tags: []
@@ -55,4 +55,14 @@ gap you were trying to fill?
      here instead (e.g. "Not started yet" / "Partway through, early
      impressions: ..."). -->
 
-The actual review. What i
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

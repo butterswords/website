@@ -1,58 +1,33 @@
 ---
 title: "Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence"
 date: '2026-06-21T20:31:28-07:00'
-draft: true
+draft: False
 author: "Kate Crawford"
 image: "https://images.squarespace-cdn.com/content/v1/655cb99992574744b5a625e4/b7b02a37-4ad9-4e4d-bf5e-6b888ebd630f/book-cover.jpg"
-category: "Recommendations"
+category: "In Progress"
 rating: ""
 external_url: "https://katecrawford.net/atlas"
 tags: []
 weight: 100
 ---
 
-<!--
-BOOK REVIEW TEMPLATE — one page per book.
-
-  hugo new --kind book_review_template content/bookshelf/book-slug.md
-
-Front matter:
-  - author        -> the BOOK's author (not you). Multiple authors: just
-                     write them out, e.g. "Catherine D'Ignazio and Lauren F. Klein".
-  - category      -> must be exactly one of the six the list page groups by:
-                       Formative       - shaped how you think; foundational
-                       Inspirations    - sparked ideas or direction
-                       In Progress     - currently reading
-                       Backlog         - want to read, haven't started
-                       Recommendations - worth recommending, maybe no full review yet
-                       Reviews         - has a full write-up below
-                     Anything else (or left blank) falls into an
-                     "Uncategorized" catch-all on the list page instead
-                     of disappearing silently.
-  - rating        -> free text, e.g. "4/5" or "Highly recommend". Leave
-                     blank for Backlog/In Progress entries.
-  - external_url  -> link to the publisher page or Wikipedia, matching
-                     the convention already used on /bookshelf/.
-
-`layouts/bookshelf/single.html` renders the category badge, author
-byline, rating, and the "View Book" button automatically from the
-front matter above — nothing to add in the body for those.
-
-Delete this comment block before publishing.
--->
-
-**TL;DR:** One-sentence verdict — would you tell a friend to read this,
-and why?
+<div class="bg-tlgray-200/40 border-l-4 border-blue-600 px-6 py-4 mb-8">
+<strong>TL;DR:</strong> A deep exploration into the physical geography of developing AI. 
+</div>
 
 ## Why I Picked This Up
 
-What led you to this book — a recommendation, a citation chain, a
-gap you were trying to fill?
+I picked this book up because I had heard about it in a workshop. It sounded like a good way to expand my understanding of where many of the externalities of frontier AI labs and providers occur. So far, it's been illuminating.
 
 ## My Take
 
-<!-- For Backlog/In Progress entries, leave a short placeholder note
-     here instead (e.g. "Not started yet" / "Partway through, early
-     impressions: ..."). -->
+I'm part of the way through and will update with more information as I go along.
 
-The actu
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Anyone who cares about the societal and environmental impacts of the creation and production of technology.

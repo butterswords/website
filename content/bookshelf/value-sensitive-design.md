@@ -4,7 +4,7 @@ date: '2026-06-21T20:34:14-07:00'
 draft: true
 author: "Batya Friedman and David G. Hendry"
 image: "https://mit-press-new-us.imgix.net/covers/9780262039536.jpg"
-category: "Recommendations"
+category: "Backlog"
 rating: ""
 external_url: "https://mitpress.mit.edu/9780262039536/value-sensitive-design/"
 tags: []
@@ -55,4 +55,14 @@ gap you were trying to fill?
      here instead (e.g. "Not started yet" / "Partway through, early
      impressions: ..."). -->
 
-The actual review. What it argues, what land
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

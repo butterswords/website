@@ -4,7 +4,7 @@ date: '2026-06-21T20:32:29-07:00'
 draft: true
 author: "Reid Blackman"
 image: "https://cdn11.bigcommerce.com/s-yneuaokjib/products/81681/images/344651/10539E_500__09546.1781269795.386.513.png?c=2"
-category: "Recommendations"
+category: "Backlog"
 rating: ""
 external_url: "https://store.hbr.org/product/ethical-machines-your-concise-guide-to-totally-unbiased-transparent-and-respectful-ai/10539"
 tags: []
@@ -52,4 +52,17 @@ gap you were trying to fill?
 ## My Take
 
 <!-- For Backlog/In Progress entries, leave a short placeholder note
-     here instead (e.
+     here instead (e.g. "Not started yet" / "Partway through, early
+     impressions: ..."). -->
+
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.

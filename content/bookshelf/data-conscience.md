@@ -4,7 +4,7 @@ date: '2026-06-21T20:35:29-07:00'
 draft: true
 author: "Brandeis Hill Marshall"
 image: "https://covers.openlibrary.org/b/id/14786746-L.jpg"
-category: "Recommendations"
+category: "Backlog"
 rating: ""
 external_url: "https://www.wiley.com/en-us/Data+Conscience:+Algorithmic+Siege+on+our+Humanity-p-9781119821182"
 tags: []
@@ -55,4 +55,14 @@ gap you were trying to fill?
      here instead (e.g. "Not started yet" / "Partway through, early
      impressions: ..."). -->
 
-The actual review. What it argues, what l
+The actual review. What it argues, what landed, what didn't.
+
+## Key Takeaways
+
+- 
+- 
+
+## Recommendation
+
+Who should read this, and why — or what you'd want to know before
+deciding whether to pick it up.
