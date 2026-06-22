@@ -6,9 +6,9 @@ image: "/img/arccos-link-holder-proto.png"
 description: ""
 status: "Completed"
 role: "Builder"
-org: "Personal"
-repo_url: "N/A"
-demo_url: "N/A"
+org: ""
+repo_url: ""
+demo_url: ""
 stack: ["Autodesk Fusion 360", "Bambu Lab A1"]
 tags: ["3D Printing", "Custom Design", "Golf"]
 categories: ["Physical"]
