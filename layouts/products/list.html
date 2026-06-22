@@ -9,10 +9,17 @@
         </div>
     </header>
     <div class="content py-1 mb-8 text-center max-w-2xl mx-auto">{{.Content}}</div>
+    {{ if gt (len .Pages) 0 }}
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
     {{ range .Pages.ByWeight }}
     {{ .Render "summary" }}
     {{ end }}
     </div>
+    {{ else }}
+    <p class="text-tlgray-500 italic text-center">
+        Nothing here yet. Add one with
+        <code>hugo new --kind product_template content/products/your-product-slug.md</code>.
+    </p>
+    {{ end }}
 </div>
 {{ end }}

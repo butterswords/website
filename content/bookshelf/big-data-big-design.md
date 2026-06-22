@@ -10,12 +10,15 @@ external_url: "https://papress.com/products/big-data-dig-design"
 tags: []
 weight: 100
 ---
-**TL;DR:** This book is worth picking up for teaching at the intersection of design and AI, at an introductory level.
+
+<div class="bg-tlgray-200/40 border-l-4 border-blue-600 px-6 py-4 mb-8">
+<strong>TL;DR:</strong> This book is worth picking up for teaching at the intersection of design and AI, at an introductory level.
+</div>
 
 
 ## Why I Picked This Up
 
-At the end of 2022, I was asked to review this book review for Taylor and Francis. It bridged several areas of interest I had and so I happily accepted. What came next was a few months of concerted reading and note taking as I tried to figure out how to position the book in context with everything else I was exploring. The review was published on May 25, 2023. 
+At the end of 2022, I was asked to review this book review for Taylor and Francis. It bridged several areas of interest I had and so I happily accepted. What came next was a few months of concerted reading and note taking as I tried to figure out how to position the book in context with everything else I was exploring. What I ended up with is that it was a book that in 2021 might have been seen as ahead of its time, in 2023 it is desperately needed. The review was published on May 25, 2023. 
 
 ## My Take
 I'll provide two excerpts from my published review below as I think they sum it up nicely:

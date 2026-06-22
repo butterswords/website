@@ -31,7 +31,9 @@ Over the years I have been asked to define my values again and again. For work, 
 ### Non-negotiables for my career
 As part of my reflections during the pandemic I realized that I need to operate from a core set of non-negotiables for work so that I know when it's time to toss in the towel and move on. This came about when I realized that the quote I'd been living by was failing to help me make peace with where I was at:
 
-> "Do what you love or make sure what you do supports what you love." - An old man on a beach in Florida in December 2006
+> Do what you love or make sure what you do supports what you love.
+
+~ An old man on a beach in Florida in December 2006
 
 It's a good piece of advice, flexible and affirming, and most of the time I think it can help you make good decisions about your career. However, when it comes down to it sometimes you need something more concrete to help you know if you're in the right place. So, I defined these non-negotiables as a way to gauge opportunities that present themselves to me. They are open-ended as well, and demand that I use them in the form of a question to find answers.
 * Do fulfilling work

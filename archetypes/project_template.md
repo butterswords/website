@@ -63,4 +63,11 @@ Content below — this is the elevator pitch.
 
 ## Closing
 
-What's the status now, what's next (if anything), an
+What's the status now, what's next (if anything), and what would you
+do differently if you started over?
+
+## References
+
+<!-- Delete if there's nothing to cite. -->
+
+- [Title](https://example.com)
