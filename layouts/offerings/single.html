@@ -45,14 +45,22 @@
         <span class="inline-block text-sm font-semibold text-blue-600 border border-blue-600 px-4 py-1 mb-4">{{ . }}</span>
         {{ end }}
 
-        <h1 class="text-3xl md:text-5xl font-extrabold text-tlgray-800 mb-4 leading-tight">{{ .Title }}</h1>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-tlgray-800 mb-6 leading-tight">{{ .Title }}</h1>
 
         {{ with .Params.tagline }}
         <p class="text-xl text-tlgray-700 mb-6">{{ . }}</p>
         {{ end }}
 
+        <div class="flex flex-wrap items-center justify-center md:justify-start text-sm text-tlgray-500 gap-6 mb-6 border-b border-tlgray-200 pb-6">
+            {{ if .Date }}
+            <div class="flex items-center">
+                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+            </div>
+            {{ end }}
+        </div>
+
         {{ if or .Params.cta_primary_url .Params.cta_secondary_url }}
-        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-8 pb-8 border-b border-tlgray-200">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             {{ with .Params.cta_primary_url }}
             <a href="{{ . | relURL }}" class="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors">
                 {{ $.Params.cta_primary_label | default "Get Started" }}

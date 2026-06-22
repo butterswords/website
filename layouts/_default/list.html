@@ -33,7 +33,14 @@
 
 {{ define "main" }}
 <div class="mx-auto my-10 max-w-6xl px-4 sm:px-6 lg:px-8">
-    <h1 class="title text-4xl font-bold mb-8">{{.Title}}</h1>
+    <header class="mb-8 text-center md:text-left">
+        <h1 class="text-3xl md:text-5xl font-extrabold text-tlgray-800 mb-6 leading-tight">{{.Title}}</h1>
+        <div class="flex flex-wrap items-center justify-center md:justify-start text-sm text-tlgray-500 gap-6 mb-6 border-b border-tlgray-200 pb-6">
+            <div class="flex items-center">
+                {{ len .Pages }} {{ if eq (len .Pages) 1 }}entry{{ else }}entries{{ end }}
+            </div>
+        </div>
+    </header>
     <div class="content py-1">{{.Content}}</div>
     {{ $paginator := .Paginate (where .Data.Pages "Type" "in" site.Params.mainSections) 6 }}
     {{ range $paginator.Pages }}

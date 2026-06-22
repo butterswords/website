@@ -48,27 +48,27 @@
         <span class="inline-block text-xs font-semibold uppercase tracking-wide px-3 py-1 mb-4 {{ $color }}">{{ . }}</span>
         {{ end }}
 
-        <h1 class="text-3xl md:text-5xl font-extrabold text-tlgray-800 mb-2 leading-tight">{{ .Title }}</h1>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-tlgray-800 mb-6 leading-tight">{{ .Title }}</h1>
 
         {{ with .Params.author }}
         <p class="text-lg text-tlgray-500 mb-4">by {{ . }}</p>
         {{ end }}
 
         <div class="flex flex-wrap items-center justify-center md:justify-start text-sm text-tlgray-500 gap-6 mb-6 border-b border-tlgray-200 pb-6">
-            {{ with .Params.rating }}
-            <div class="flex items-center">
-                <span class="font-medium text-tlgray-700 mr-1">Rating:</span> {{ . }}
-            </div>
-            {{ end }}
             {{ if .Date }}
             <div class="flex items-center">
                 <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
             </div>
             {{ end }}
+            {{ with .Params.rating }}
+            <div class="flex items-center">
+                <span class="font-medium text-tlgray-700 mr-1">Rating:</span> {{ . }}
+            </div>
+            {{ end }}
         </div>
 
         {{ with .Params.external_url }}
-        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mb-2">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <a href="{{ . | relURL }}" class="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors">
                 View Book
             </a>
