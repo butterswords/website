@@ -3,7 +3,7 @@ title: 'Arccos Link Holder'
 date: '2026-06-22T10:06:16-07:00'
 draft: false
 image: "img/arccos-link-holder-proto.png"
-description: ""
+description: "Build a custom holder for ~15% of the cost of the brand offering."
 status: "Completed"
 role: "Builder"
 org: ""
