@@ -16,16 +16,11 @@ weight: 100
 
 ## Why I Picked This Up
 
-What led you to this book — a recommendation, a citation chain, a
-gap you were trying to fill?
+I picked up this book because it was recommended by a friend.
 
 ## My Take
 
-<!-- For Backlog/In Progress entries, leave a short placeholder note
-     here instead (e.g. "Not started yet" / "Partway through, early
-     impressions: ..."). -->
-
-The actual review. What it argues, what landed, what didn't.
+Not Started.
 
 ## Key Takeaways
 
@@ -34,5 +29,4 @@ The actual review. What it argues, what landed, what didn't.
 
 ## Recommendation
 
-Who should read this, and why — or what you'd want to know before
-deciding whether to pick it up.
+I will let you know when I figure it out.
