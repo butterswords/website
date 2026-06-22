@@ -66,16 +66,10 @@ googleFonts = true
   weight = 2
 
  # [[menu.main]]
- # identifier = "products"
- # name = "Products"
- # url = "/products/"
+ # identifier = "offerings"
+ # name = "Offerings"
+ # url = "/offerings/"
  # weight = 3
-
- # [[menu.main]]
- # identifier = "services"
- # name = "Services"
- # url = "/services/"
- # weight = 4
 
   [[menu.main]]
   identifier = "bookshelf"

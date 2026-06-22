@@ -41,6 +41,10 @@
         </div>
         {{ end }}
 
+        {{ with .Params.offering_type }}
+        <span class="inline-block text-xs font-semibold uppercase tracking-wide px-3 py-1 mb-4 bg-tlgray-200 text-tlgray-700">{{ . }}</span>
+        {{ end }}
+
         {{ with .Params.price }}
         <span class="inline-block text-sm font-semibold text-blue-600 border border-blue-600 px-4 py-1 mb-4">{{ . }}</span>
         {{ end }}
