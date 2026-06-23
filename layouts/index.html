@@ -12,7 +12,9 @@
 
 {{ define "main" }}
     {{- partial "alert.html" . -}}
+    {{ if ne .Site.Params.showSlide false }}
     {{- partial "slide.html" . -}}
+    {{ end }}
     {{- partial "strip.html" . -}}
     {{ if ne .Site.Params.showBlog false }}
     <div class="mx-auto my-10 max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -23,6 +25,7 @@
 {{ end }}
 
 {{ define "scripts" }}
+    {{ if ne .Site.Params.showSlide false }}
     <script src="{{ "/js/splide.min.js" | relURL }}"></script>
     <script>
         document.addEventListener( 'DOMContentLoaded', function() {
@@ -34,4 +37,5 @@
             } ).mount();
         } );
     </script>
+    {{ end }}
 {{ end }}

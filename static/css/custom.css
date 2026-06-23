@@ -1,0 +1,23 @@
+/* =============================================================
+   butterswords.com — custom CSS overrides
+   Loaded after theme styles (see themes/tella/layouts/partials/head.html)
+   ============================================================= */
+
+/* ------------------------------------------------------------------
+   Slide / hero carousel
+   Theme default: height: 85vh; object-fit: cover
+   Problem: small source images (< 1920px wide) upscale and blur.
+   Fix: contain keeps images sharp at the cost of letterboxing.
+   Background-color fills the empty space on sides.
+   Long-term solution: replace images with 1920×800+ source files.
+   ------------------------------------------------------------------ */
+.splide__list img {
+  height: 60vh;
+  object-fit: contain;
+  background-color: #111;
+}
+
+/* Title text: add a subtle text shadow so light text reads on any image */
+.splide__slide .s-fade-txt h1 {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+}

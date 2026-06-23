@@ -17,6 +17,7 @@ enableRobotsTXT = true
 
 [params]
 showBlog = true
+showSlide = true   # set to false to hide the homepage carousel
 mainSections = ['blog']
 googleFonts = true
 
