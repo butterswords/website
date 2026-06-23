@@ -17,7 +17,9 @@ enableRobotsTXT = true
 
 [params]
 showBlog = true
-showSlide = true   # set to false to hide the homepage carousel
+showSlide = false   # set to false to hide the homepage carousel
+showHero = true          # set to true to show the text+image hero (see data/hero.json)
+showTestimonials = false # set to true to show testimonials below features (see data/testimonials.json)
 mainSections = ['blog']
 googleFonts = true
 
@@ -27,7 +29,7 @@ googleFonts = true
 
   # The size parameter is the class name of tailwindcss
   # https://tailwindcss.com/
-  size = "h-14"
+  size = "h-20"
 
   [params.site]
   name = "Navigating tradeoffs in safety and value in system development."

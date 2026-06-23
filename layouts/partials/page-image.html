@@ -1,0 +1,46 @@
+{{/* page-image.html — renders either an <img> or an icon <i>, depending on what
+     "src" contains. Handles two layout contexts.
+
+     Usage:
+       {{ partial "page-image.html" (dict "src" .Params.image "alt" .Title "context" "banner") }}
+       {{ partial "page-image.html" (dict "src" .Params.image "alt" .Title "context" "card") }}
+
+     Parameters:
+       src     — file path ("img/photo.jpg") OR icon class string ("fa-solid fa-shield")
+       alt     — alt text for images (omitted / aria-hidden for icons)
+       context — "banner" : full-width header on single pages (rounded, shadow, aspect-video)
+                 "card"   : thumbnail in summary/list cards (flush, aspect-video, hover scale)
+
+     Detection: strings starting with "fa-" or "bi" are treated as icon class strings.
+     Everything else is treated as an image path and passed through relURL. */}}
+
+{{ $src     := .src }}
+{{ $alt     := .alt     | default "" }}
+{{ $context := .context | default "banner" }}
+{{ $isIcon  := or (hasPrefix $src "fa-") (hasPrefix $src "bi") }}
+
+{{ if eq $context "banner" }}
+
+  {{ if $isIcon }}
+  <div class="rounded-xl overflow-hidden mb-8 aspect-video w-full shadow-md bg-tlgray-200 flex items-center justify-center">
+    <i class="{{ $src }} page-icon-banner text-tlgray-700" aria-hidden="true"></i>
+  </div>
+  {{ else }}
+  <div class="rounded-xl overflow-hidden mb-8 aspect-video w-full shadow-md">
+    <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="w-full h-full object-cover">
+  </div>
+  {{ end }}
+
+{{ else if eq $context "card" }}
+
+  {{ if $isIcon }}
+  <div class="aspect-video w-full overflow-hidden bg-tlgray-200 flex items-center justify-center">
+    <i class="{{ $src }} page-icon-card text-tlgray-700" aria-hidden="true"></i>
+  </div>
+  {{ else }}
+  <div class="aspect-video w-full overflow-hidden bg-gray-100">
+    <img src="{{ $src | relURL }}" alt="{{ $alt }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+  </div>
+  {{ end }}
+
+{{ end }}

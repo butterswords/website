@@ -16,9 +16,7 @@
 <div class="bookshelf-card h-full group bg-white transition-all duration-300 border border-tlgray-200 overflow-hidden" data-category="{{ $normalizedCat }}">
     <a href="{{ .Permalink }}" class="h-full flex flex-col">
         {{ if .Params.image }}
-        <div class="aspect-video w-full overflow-hidden bg-gray-100">
-            <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-        </div>
+        {{ partial "page-image.html" (dict "src" .Params.image "alt" .Title "context" "card") }}
         {{ end }}
         <div class="p-6 flex flex-col grow">
             <span class="inline-block text-xs font-semibold uppercase tracking-wide px-3 py-1 mb-3 self-start {{ $color }}">{{ $normalizedCat }}</span>

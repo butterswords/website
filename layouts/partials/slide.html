@@ -1,0 +1,33 @@
+{{/* Site-level slide override — constrained to max-w-6xl, matching text column.
+     Overrides themes/tella/layouts/partials/slide.html (which is full-viewport).
+     Navigation arrows appear outside the image track via .site-slide-wrapper CSS. */}}
+<div class="mx-auto my-6 max-w-6xl px-4 sm:px-6 lg:px-8">
+  <div class="site-slide-wrapper">
+    <div class="splide" role="group" aria-label="Top Page Slides">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {{ if ge hugo.Version "0.156.0" }}
+            {{ range hugo.Data.slide }}
+            <li class="splide__slide">
+              <img src="{{ .image }}" alt="{{ .alt }}">
+              <div class="s-fade-txt">
+                <h1 class="text-3xl md:text-4xl font-extrabold {{ or .color "text-white" }}">{{ .title }}</h1>
+              </div>
+            </li>
+            {{ end }}
+          {{ else }}
+            {{ range .Site.Data.slide }}
+            <li class="splide__slide">
+              <img src="{{ .image }}" alt="{{ .alt }}">
+              <div class="s-fade-txt">
+                <h1 class="text-3xl md:text-4xl font-extrabold {{ or .color "text-white" }}">{{ .title }}</h1>
+              </div>
+            </li>
+            {{ end }}
+          {{ end }}
+        </ul>
+      </div>
+      {{/* Arrows render here (outside __track) — repositioned below the image via CSS */}}
+    </div>
+  </div>
+</div>

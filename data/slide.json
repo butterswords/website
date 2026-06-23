@@ -2,11 +2,11 @@
   {
     "title": "Learn the lessons others have failed to learn",
     "image": "img/slide/learn-the-lessons.png",
-    "color": "text-black"
+    "color": "text-gray-100"
   },
   {
     "title": "The boundaries are permeable and the problems vast.",
     "image": "img/slide/security-and-safety.png",
-    "color": "text-black"
+    "color": "text-gray-100"
   }
 ]

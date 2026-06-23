@@ -1,0 +1,13 @@
+{
+  "section_title": "What People Are Saying",
+  "items": [
+    {
+      "quote": "Replace this with a real quote. Something specific about the value delivered, a problem solved, or a perspective shifted.",
+      "name": "First Last",
+      "title": "Job Title",
+      "organization": "Organization Name",
+      "image": "fa-solid fa-user",
+      "image_position": "left"
+    }
+  ]
+}

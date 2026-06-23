@@ -1,23 +1,109 @@
 /* =============================================================
    butterswords.com — custom CSS overrides
-   Loaded after theme styles (see themes/tella/layouts/partials/head.html)
+   Loaded last via themes/tella/layouts/partials/head.html
    ============================================================= */
 
-/* ------------------------------------------------------------------
-   Slide / hero carousel
-   Theme default: height: 85vh; object-fit: cover
-   Problem: small source images (< 1920px wide) upscale and blur.
-   Fix: contain keeps images sharp at the cost of letterboxing.
-   Background-color fills the empty space on sides.
-   Long-term solution: replace images with 1920×800+ source files.
-   ------------------------------------------------------------------ */
-.splide__list img {
-  height: 60vh;
+
+/* ── Constrained slide carousel ────────────────────────────────
+   Theme default stretches the slide full-viewport (85vh, cover).
+   We constrain it to the max-w-6xl text column (see layouts/partials/slide.html).
+   object-fit: contain keeps images sharp without cropping.
+   background-color fills letterbox space on sides/top.
+   Long-term fix: use 1920×800+ source images for crisp full-bleed.
+   ---------------------------------------------------------------- */
+.site-slide-wrapper .splide__list img {
+  height: 45vh;
   object-fit: contain;
   background-color: #111;
 }
 
-/* Title text: add a subtle text shadow so light text reads on any image */
-.splide__slide .s-fade-txt h1 {
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+/* Widen the title overlay to 75% of the slide — enough breathing room on both sides */
+.site-slide-wrapper .splide__slide .s-fade-txt {
+  width: 75%;
+  text-align: center;
+}
+
+/* Title shadow for readability over any image */
+.site-slide-wrapper .splide__slide .s-fade-txt h1 {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75);
+}
+
+/* Move Splide arrows outside the image track — they sit below it */
+.site-slide-wrapper .splide {
+  display: flex;
+  flex-direction: column;
+}
+.site-slide-wrapper .splide__track {
+  order: 1;
+}
+.site-slide-wrapper .splide__arrows {
+  order: 2;
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0 0;
+}
+.site-slide-wrapper .splide__arrow {
+  position: static;
+  transform: none;
+  background: transparent;
+  border: 1px solid #ccc;
+  width: 2rem;
+  height: 2rem;
+  opacity: 1;
+  border-radius: 0;
+}
+.site-slide-wrapper .splide__arrow:hover {
+  background: #f0f0f0;
+}
+.site-slide-wrapper .splide__arrow svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  fill: #444;
+}
+.site-slide-wrapper .splide__pagination {
+  position: static;
+  padding: 0.5rem 0 0;
+}
+
+
+/* ── page-image partial: icon sizing ───────────────────────────
+   .page-icon-banner — full-width header on single pages
+   .page-icon-card   — thumbnail in summary/list cards
+   ---------------------------------------------------------------- */
+.page-icon-banner {
+  font-size: clamp(4rem, 10vw, 8rem);
+  line-height: 1;
+}
+.page-icon-card {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+}
+
+
+/* ── Testimonials ───────────────────────────────────────────────
+   Large decorative opening quotation mark above each quote.
+   ---------------------------------------------------------------- */
+.testimonial-quote::before {
+  content: '\201C';
+  display: block;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: oklch(0.7137 0.0192 261.32); /* tlgray-400 */
+  margin-bottom: -0.75rem;
+  font-family: Georgia, serif;
+}
+
+
+/* ── Hero section ───────────────────────────────────────────────
+   Most hero layout is handled by Tailwind utility classes in hero.html.
+   ---------------------------------------------------------------- */
+
+/* Scale a Font Awesome / Bootstrap icon used as the hero visual */
+.hero-icon {
+  font-size: clamp(6rem, 16vw, 12rem);
+  line-height: 1;
+  color: oklch(0.2781 0.0296 256.85); /* tlgray-800 */
 }
