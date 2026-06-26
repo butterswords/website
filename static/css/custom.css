@@ -4,6 +4,17 @@
    ============================================================= */
 
 
+/* ── Sticky site header ─────────────────────────────────────────
+   position:sticky and z-index live here rather than as Tailwind
+   utility classes to avoid Tailwind's CSS purge removing them.
+   ---------------------------------------------------------------- */
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+
 /* ── Constrained slide carousel ────────────────────────────────
    Theme default stretches the slide full-viewport (85vh, cover).
    We constrain it to the max-w-6xl text column (see layouts/partials/slide.html).

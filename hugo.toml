@@ -29,7 +29,7 @@ googleFonts = true
 
   # The size parameter is the class name of tailwindcss
   # https://tailwindcss.com/
-  size = "h-20"
+  size = "h-10"
 
   [params.site]
   name = "Navigating tradeoffs in safety and value in system development."

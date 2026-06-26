@@ -230,3 +230,5 @@ npm-debug.log*
 # Custom
 docs/
 docs/adr/
+content/blog/DRAFT-*
+backup*
