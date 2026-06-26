@@ -1,18 +1,18 @@
 [
   {
     "title": "System Safety; not AI Safety",
-    "description": "Safety is more than just fixing technology. It's about creating systems designed to provide value while preventing harm.",
+    "description": "Safety is more than just fixing or constraining technology. It's about creating systems designed to provide value while preventing harm.",
     "icon": "fa-solid fa-people-roof"
   },
   {
     "title": "AI Risk and Vulnerability Alliance",
-    "description": "Check out the Nonprofit I cofounded to help communities identify and mitigate risks.",
+    "description": "Check out the Nonprofit I cofounded to help communities identify and mitigate risks in AI systems.",
     "link": "https://www.avidml.org/arva",
     "icon": "bi bi-hexagon-half"
   },
   {
     "title": "Find me on Linkedin",
-    "description": "If you want to see what I follow and share, then find me there. I generally don't post because I prefer to support others' voices to reduce noise and competition.",
+    "description": "If you want to see what I follow and share, then find me there. I generally don't post because I prefer to support others' voices to reduce noise and improve concensus.",
     "link": "https://linkedin.com/in/nathanbutters",
     "icon": "bi bi-linkedin"
   }
