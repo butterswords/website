@@ -32,7 +32,7 @@ googleFonts = true
   size = "h-10"
 
   [params.site]
-  name = "Navigating tradeoffs in safety and value in system development."
+  name = "Navigating tradeoffs between safety and value in system development."
 
   [params.icon]
   # If you want to use FontAwesome, set this parameter to true.
@@ -45,7 +45,7 @@ googleFonts = true
   # If you want to use share buttons, set this parameter to true.
   enable = true
   # Uncomment and edit to limit which services are shown
-  # services = ["twitter", "mastodon", "facebook", "line", "linkedin", "whatsapp", "mail", "copy"]
+  services = ["linkedin", "mail", "copy"]
 
   [params.homepage_meta_tags]
   meta_description = "Navigating tradeoffs between safety and value in system development."

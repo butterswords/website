@@ -18,7 +18,7 @@ weight: 100
 <!--
 PROJECT TEMPLATE — for describing a past or current project.
 
-  hugo new --kind project_template content/projects/my-project.md
+  hugo new --kind project_template content/projects/DRAFT-my-project.md
 
 `layouts/projects/single.html` renders status as a colored badge
 ("Completed"/"Ongoing"/"Concept"/"On hold" get distinct colors, any

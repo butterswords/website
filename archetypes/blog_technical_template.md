@@ -16,7 +16,7 @@ weight: 100
 TECHNICAL BLOG TEMPLATE — for deep dives, build logs, write-ups of a
 system, tool, or technique.
 
-  hugo new --kind blog_technical_template content/blog/my-post-slug.md
+  hugo new --kind blog_technical_template content/blog/DRAFT-my-post-slug.md
 
 Delete this comment block before publishing.
 -->

@@ -15,7 +15,7 @@ weight: 100
 PERSONAL MUSING TEMPLATE — for reflective, opinion, or life/career
 posts that aren't primarily technical.
 
-  hugo new --kind blog_musing_template content/blog/my-post-slug.md
+  hugo new --kind blog_musing_template content/blog/DRAFT-my-post-slug.md
 
 Delete this comment block before publishing.
 -->

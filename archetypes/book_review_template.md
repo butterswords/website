@@ -14,7 +14,7 @@ weight: 100
 <!--
 BOOK REVIEW TEMPLATE — one page per book.
 
-  hugo new --kind book_review_template content/bookshelf/book-slug.md
+  hugo new --kind book_review_template content/bookshelf/DRAFT-book-slug.md
 
 Front matter:
   - author        -> the BOOK's author (not you). Multiple authors: just

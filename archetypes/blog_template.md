@@ -16,7 +16,7 @@ GENERAL BLOG TEMPLATE — use for posts that mix technical content with
 personal reflection, or whenever the technical/musing split below
 doesn't apply cleanly.
 
-  hugo new --kind blog_template content/blog/my-post-slug.md
+  hugo new --kind blog_template content/blog/DRAFT-my-post-slug.md
 
 If a post is clearly one or the other, use the more specific archetype
 instead:

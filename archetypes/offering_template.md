@@ -22,7 +22,7 @@ This is the one content type for anything you sell or provide --
 products and services both live here as "offerings," distinguished
 only by the `offering_type` field below, not by separate sections.
 
-  hugo new --kind offering_template content/offerings/my-offering.md
+  hugo new --kind offering_template content/offerings/DRAFT-my-offering.md
 
 `layouts/offerings/single.html` renders the type badge, tagline, price
 badge, and CTA buttons above and below the content automatically from
