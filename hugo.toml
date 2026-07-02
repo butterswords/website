@@ -1,5 +1,5 @@
 baseURL = "https://butterswords.com"
-title = "Butterswords | Butters Words | Butter Swords"
+title = "Butterswords | Where Words >= Swords"
 author = "Nathan Butters"
 locale = "en"
 DefaultContentLanguage = "en"
@@ -49,7 +49,7 @@ googleFonts = true
 
   [params.homepage_meta_tags]
   meta_description = "Navigating tradeoffs between safety and value in system development."
-  meta_og_title = "Butterswords | Butters Words | Butter Swords"
+  meta_og_title = "Butterswords | Where Words >= Swords"
   meta_og_type = "website"
   meta_og_url = "http://butterswords.com"
   meta_og_image = "img/logo/logo.svg"

@@ -12,7 +12,7 @@ weight: 100
 ---
 
 <div class="bg-tlgray-200/40 border-l-4 border-blue-600 px-6 py-4 mb-8">
-<strong>TL;DR:</strong> What are systems of oppression? How do we engage with them?
+<strong>TL;DR:</strong> What are systems of oppression? How do we engage with them? How do we understand our place in the Matrix of Domination?
 </div>
 
 ## Why I Picked This Up
