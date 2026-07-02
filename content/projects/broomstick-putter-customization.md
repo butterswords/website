@@ -2,7 +2,7 @@
 title: 'Broomstick Putter Customization and Case'
 date: '2026-05-02T10:06:31-07:00'
 draft: false
-image: "https://photos.app.goo.gl/3mWtLhPrZAfkiTBb9"
+image: "https://lh3.googleusercontent.com/pw/AP1GczOyI1-qJGsoYT9lOPkgo3ZQ3jDCLzeLd2sS0UpXr45jnm6PZn0kcTIrS3JwKEh3IfSNufA4qdmVSq_4iWlwZ8PMGc6phnS5pNg5t-q9WwA6l6o9M0SSb7PoRhRkrNZUaZpLc68q_11jIPtZJofAmSrGPQ=w1547-h1031-s-no-gm"
 description: "Creating 1 of 1 designs to support my play style."
 status: "Completed"
 role: ""
