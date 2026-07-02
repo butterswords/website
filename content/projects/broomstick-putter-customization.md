@@ -2,7 +2,7 @@
 title: 'Broomstick Putter Customization and Case'
 date: '2026-05-02T10:06:31-07:00'
 draft: false
-image: ""
+image: "https://photos.app.goo.gl/3mWtLhPrZAfkiTBb9"
 description: "Creating 1 of 1 designs to support my play style."
 status: "Completed"
 role: ""
@@ -40,7 +40,7 @@ I built two things as part of this project: 1) a travel case for a broomstick pu
 - [Live demo](#)
 - [Album](https://photos.app.goo.gl/MP9d98USTMfj9ybf7)
 
-## Core Content
+## Project Core
 
 I like the idea of creating functional items to make things better. When I hear of problems I often think about whether there's a simple solution just around the corner that I can find or create. I had been wondering if broomstick putters could fit my playstyle for years, but had never seriously contemplated getting one. I tried one at a pro shop while waiting for an appointment and realized I truly enjoyed the feel. I figured I would get one for myself using store credit at my local shop.
 
