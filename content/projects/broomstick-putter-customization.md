@@ -1,6 +1,6 @@
 ---
 title: 'Broomstick Putter Customization and Case'
-date: '2026-05-2T10:06:31-07:00'
+date: '2026-05-02T10:06:31-07:00'
 draft: false
 image: ""
 description: "Creating 1 of 1 designs to support my play style."
