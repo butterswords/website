@@ -3,7 +3,7 @@ title: 'Starting to evaluate agent usefulness'
 date: '2026-06-24T09:54:49-07:00'
 draft: false
 author: "Nathan Butters"
-image: "img/butterswords_icon.svg"
+image: "https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fd3083d3f40bb2b6f477901cc9a240738d3dd1371-2401x1000.png&w=3840&q=75"
 description: "The starting point for my exploration of the question: how can I use agents?"
 tags: ["Agents", "Claude", "Vibe Coding", "Spec-driven Development", "AI in Design"]
 categories: ["PSA"]
@@ -45,12 +45,12 @@ Of the use cases above, three of the tasks (Triage bugs in live code, Demo creat
 
 | Potential Use Case | Last Activity Date | Current Status | Notes | 
 | :--- | :--- | :--- | :--- |
-| **Design a custom logo/wordmark** | June 20, 2026|✅| This took me the better part of a week's worth of Claude Credits on Free Tier.|
+| **Design a custom logo/wordmark** | June 17, 2026|✅| This took me the better part of a week's worth of Claude Credits on Free Tier.|
 | **Resume rewrites for specific jobs** |July 2, 2026 |✅ | I am unsure whether the changes made are useful. |
 | **Draft a business plan** | May 30, 20206 |✅ | The framework was helpful, the financials... not so much. | 
-| **Create a Mod for a video game** | |🆕 | | 
-| **Oxalate Estimator** | |🔜 | | 
-| **Irrigation System** | |🔜 | | 
-| **Triage bugs in live code** | July 3, 2026 |✅ | Definitely a place worth exploring more. | 
+| **Create a Mod for a video game** | June 22, 2026 |🆕 | | 
+| **Oxalate Estimator** | May 26, 2026 |🔜 | | 
+| **Irrigation System** | June 1, 2026 |🔜 | | 
+| **Triage bugs in live code** | June 3, 2026 |✅ | Definitely a place worth exploring more. | 
 | **Demo Creation** | June 24, 2026 |✅ | This helped me build quickly once I figured out how best to shape my own experience. | 
 | **Creating an Agent** | June 2, 2026| ✅ | It's tough to code in front of people in 30 minutes, especially when they expect you to prompt Claude and then just chat... | 
