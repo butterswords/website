@@ -11,12 +11,6 @@ series: ["How can I use Agents?"]
 weight: 100
 ---
 
-<div class="bg-tlgray-200/40 border-l-4 border-blue-600 px-6 py-4 mb-8">
-<strong>BLUF:</strong> Use agents for tasks you'd never consider using them for. See how they perform. It may not change your mind and, if it doesn't, at least then you'd be able to say you tested your biases.
-</div>
-
-## Introduction
-
 I recently talked with a friend and collaborator about agents and the usefulness of products such as Anthropic's Claude (incl. Cowork and Claude Code). We did not agree on much during the conversation, with me sounding very rigid and curmudgeonly and him taking on an optimistic view I did not expect. I respect this person a great deal, so as he continued to argue for the benefits and usefulness of these systems in his life I felt a desire to better understand where he was coming from. Towards the end of the conversation he gave me a blanket challenge: 
 
 > Use agents for tasks you'd never consider using them for. See how they perform. It may not change your mind and, if it doesn't, at least then you'd be able to say you tested your biases.
@@ -37,7 +31,7 @@ I feel a lot of friction about using agents because I don't know if they provide
 | **Resume rewrites for specific jobs** | Claude Cowork | Assess my resume's fit for a role and then use it, and my LinkedIn profile, to generate a role-specific resume | Low | High| It has generated a resume for each role I've used it for | The text generated feels largely made up and not reflective of my experience, no positive responses yet for modified resumes |
 | **Draft a business plan** | Claude Cowork | Take a set of goals and a website and turn it into a business plan | Low | High | It provided a structured document with some rough estimates for revenue and expenses | The structure seemed find, the numbers did not match across the document |
 | **Create a Mod for a video game** | Claude Cowork | Create a mod for Banner Lord 2 to add a new story and more depth | Medium | High | Unknown| Not Started |
-| **Oxalate Estimator** | VLM + Agent (Tools/Memory) | Estimating the amount of oxalates in food based on images, recipes, or labes | Medium | High | Initial POC showed promise but continually broke when given a recipe | Just Started|
+| **Oxalate Estimator** | VLM + Agent | Estimating the amount of oxalates in food based on images, recipes, or labes | Medium | High | Initial POC showed promise but continually broke when given a recipe | Just Started|
 | **Irrigation System** | Agent | Using an agent to gather upcoming weather information from the internet and determine if an automated watering system should run. | Medium | Medium | Unknown | Not Started | 
 | **Triage bugs in live code** | Claude Cowork | Assisting me by identifying issues with dependencies and configuration. | Low | High | It helped me identify and resolve a bug that came about after an update to a dependency | The system appears to handle this task well |
 | **Demo Creation** | Claude Cowork and Claude Code |  | Medium | High | The demo came out great | This tech is useful for mocking a front end, with custom functionality, quickly |
@@ -51,12 +45,12 @@ Of the use cases above, three of the tasks (Triage bugs in live code, Demo creat
 
 | Potential Use Case | Last Activity Date | Current Status | Notes | 
 | :--- | :--- | :--- | :--- |
-| **Design a custom logo/wordmark** | June 20, 2026|✅||
-| **Resume rewrites for specific jobs** |July 2, 2026 |✅ | |
-| **Draft a business plan** | May 30, 20206 |✅ | | 
+| **Design a custom logo/wordmark** | June 20, 2026|✅| This took me the better part of a week's worth of Claude Credits on Free Tier.|
+| **Resume rewrites for specific jobs** |July 2, 2026 |✅ | I am unsure whether the changes made are useful. |
+| **Draft a business plan** | May 30, 20206 |✅ | The framework was helpful, the financials... not so much. | 
 | **Create a Mod for a video game** | |🆕 | | 
 | **Oxalate Estimator** | |🔜 | | 
 | **Irrigation System** | |🔜 | | 
-| **Triage bugs in live code** | July 3, 2026 |✅ | | 
-| **Demo Creation** | |✅ | June 24, 2026 | 
-| **Creating an Agent** | June 2, 2026| ✅ | | 
+| **Triage bugs in live code** | July 3, 2026 |✅ | Definitely a place worth exploring more. | 
+| **Demo Creation** | June 24, 2026 |✅ | This helped me build quickly once I figured out how best to shape my own experience. | 
+| **Creating an Agent** | June 2, 2026| ✅ | It's tough to code in front of people in 30 minutes, especially when they expect you to prompt Claude and then just chat... | 
