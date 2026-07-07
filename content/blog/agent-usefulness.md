@@ -51,5 +51,5 @@ Of the use cases above, three of the tasks (Triage bugs in live code, Demo creat
 | **Oxalate Estimator** | May 26, 2026 |🔜 | I have a mock POC up that runs locally. | N/A | 
 | **Irrigation System** | June 1, 2026 |🔜 | I have thought through the business logic, but have not yet started on the hardware.| N/A | 
 | **Triage bugs in live code** | June 3, 2026 |✅ | Definitely a place worth exploring more. | N/A | 
-| **Demo Creation** | June 24, 2026 |✅ | This helped me build quickly once I figured out how best to shape my own experience. |  [Building demos with Claude](../building-demos-using-claude.md)
+| **Demo Creation** | June 24, 2026 |✅ | This helped me build quickly once I figured out how best to shape my own experience. |  [Building demos with Claude](../building-demos-using-claude)
 | **Creating an Agent** | June 2, 2026| ✅ | It's tough to code in front of people in 30 minutes, especially when they expect you to prompt Claude and then just chat... | N/A | 
