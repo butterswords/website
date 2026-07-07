@@ -27,30 +27,29 @@ I feel a lot of friction about using agents because I don't know if they provide
 
 | Potential Use Case | What is the tech | What I hope to do | Effort or skill required | Value to me | Outcome | My current judgment | 
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | 
+| **Triage bugs in live code** | Claude Cowork | Assisting me by identifying issues with dependencies and configuration. | Low | High | It helped me identify and resolve a bug that came about after an update to a dependency | The system appears to handle this task well |
+| **Demo Creation** | Claude Cowork and Claude Code | Use agents to create a functioning demo for a job interview given a tight timeline. | Medium | High | The demo came out great | This tech is useful for mocking a front end, with custom functionality, quickly |
+| **Creating an Agent** | Ollama + Copilot | Create an agent live as part of a "vibe-coding interview". | Medium | Low | I finished the agent in the time alotted | It could be very useful, but it's also dangerous to use too much | 
 | **Design a custom logo/wordmark** | Claude Cowork | Take a simple sketch I have of a wordmark and generate a logo and wordmark from it | Low | Medium | It eventually created a usable placeholder logo and wordmark | Design does not appear to be a strength of these systems, especially when making small modifications based on abstract concepts like balance | 
 | **Resume rewrites for specific jobs** | Claude Cowork | Assess my resume's fit for a role and then use it, and my LinkedIn profile, to generate a role-specific resume | Low | High| It has generated a resume for each role I've used it for | The text generated feels largely made up and not reflective of my experience, no positive responses yet for modified resumes |
 | **Draft a business plan** | Claude Cowork | Take a set of goals and a website and turn it into a business plan | Low | High | It provided a structured document with some rough estimates for revenue and expenses | The structure seemed find, the numbers did not match across the document |
 | **Create a Mod for a video game** | Claude Cowork | Create a mod for Banner Lord 2 to add a new story and more depth | Medium | High | Unknown| Not Started |
 | **Oxalate Estimator** | VLM + Agent | Estimating the amount of oxalates in food based on images, recipes, or labes | Medium | High | Initial POC showed promise but continually broke when given a recipe | Just Started|
 | **Irrigation System** | Agent | Using an agent to gather upcoming weather information from the internet and determine if an automated watering system should run. | Medium | Medium | Unknown | Not Started | 
-| **Triage bugs in live code** | Claude Cowork | Assisting me by identifying issues with dependencies and configuration. | Low | High | It helped me identify and resolve a bug that came about after an update to a dependency | The system appears to handle this task well |
-| **Demo Creation** | Claude Cowork and Claude Code |  | Medium | High | The demo came out great | This tech is useful for mocking a front end, with custom functionality, quickly |
-| **Creating an Agent** | Ollama + Copilot |  | Medium | Low | I finished the agent in the time alotted | It could be very useful, but it's also dangerous to use too much | 
-
 
 Of the use cases above, three of the tasks (Triage bugs in live code, Demo creation, Creating an Agent) fall directly within what I believe agents to be useful for. I will still test them so I do not end up focusing only on peripheral use cases of the systems. The creators of this technology want people to believe it can support or replace human work across many domains. I consider this exploration an expansion of the years of risk management I've been doing in the space at a more personal level.
 
 
 ### Update Log
 
-| Potential Use Case | Last Activity Date | Current Status | Notes | 
-| :--- | :--- | :--- | :--- |
-| **Design a custom logo/wordmark** | June 17, 2026|✅| This took me the better part of a week's worth of Claude Credits on Free Tier.|
-| **Resume rewrites for specific jobs** |July 2, 2026 |✅ | I am unsure whether the changes made are useful. |
-| **Draft a business plan** | May 30, 20206 |✅ | The framework was helpful, the financials... not so much. | 
-| **Create a Mod for a video game** | June 22, 2026 |🆕 | | 
-| **Oxalate Estimator** | May 26, 2026 |🔜 | | 
-| **Irrigation System** | June 1, 2026 |🔜 | | 
-| **Triage bugs in live code** | June 3, 2026 |✅ | Definitely a place worth exploring more. | 
-| **Demo Creation** | June 24, 2026 |✅ | This helped me build quickly once I figured out how best to shape my own experience. | 
-| **Creating an Agent** | June 2, 2026| ✅ | It's tough to code in front of people in 30 minutes, especially when they expect you to prompt Claude and then just chat... | 
+| Potential Use Case | Last Activity Date | Current Status | Notes | Link (if available)| 
+| :--- | :--- | :--- | :--- | :---|
+| **Design a custom logo/wordmark** | June 17, 2026|✅| This took me the better part of a week's worth of Claude Credits on Free Tier.| N/A | 
+| **Resume rewrites for specific jobs** |July 2, 2026 |✅ | I am unsure whether the changes made are useful. | N/A | 
+| **Draft a business plan** | May 30, 20206 |✅ | The framework was helpful, the financials... not so much. |  N/A | 
+| **Create a Mod for a video game** | June 22, 2026 |🆕 | | N/A | 
+| **Oxalate Estimator** | May 26, 2026 |🔜 | I have a mock POC up that runs locally. | N/A | 
+| **Irrigation System** | June 1, 2026 |🔜 | I have thought through the business logic, but have not yet started on the hardware.| N/A | 
+| **Triage bugs in live code** | June 3, 2026 |✅ | Definitely a place worth exploring more. | N/A | 
+| **Demo Creation** | June 24, 2026 |✅ | This helped me build quickly once I figured out how best to shape my own experience. |  [Building demos with Claude](blog/building-demos-using-claude.md)
+| **Creating an Agent** | June 2, 2026| ✅ | It's tough to code in front of people in 30 minutes, especially when they expect you to prompt Claude and then just chat... | N/A | 

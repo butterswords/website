@@ -32,7 +32,7 @@ The system traces all activity for auditing purposes and supports the generation
 | :--- | :--- | :--- | :--- |
 | **START DATE** | Ideation and Research | June 15, 2026 | Gauging whether I should build a traditional wireframe or use Claude Code to make a functional demo | 
 | **Phase 1** | Initial explorations | June 15, 2026 | I worked with Claude Code to see whether it could create what I wanted using just my initial ideation |
-| **Phase 2** | Proper requirements development for spec-driven development | June 16, 2026 | I fleshed out my vision, user stories, and requirements with enough clarity to allow Claude to follow them |
+| **Phase 2** | Proper requirements development for spec-driven development | June 17, 2026 | I fleshed out my vision, user stories, and requirements with enough clarity to allow Claude to follow them |
 | **Phase 3** | Iteration, QA, and clean up | June 18, 2026 | Working through the experience to identify areas where what was built deviated from specs and reconciling the build |
 | **Phase 4** | Demo mapping and creation | June 19, 2026 | Creating the demo and sending it off to be reviewed |
 | **END DATE** | Debrief on the demo | June 24, 2026 | Answering questions about the demo and the tradeoffs I made |
