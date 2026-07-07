@@ -54,7 +54,7 @@ I then directed Claude Code to create a new build plan based on my first iterati
 
 It took about 20 minutes for the model to review the document, codebase, and refactor it. I then tasked the system with self assessment based on the spec gate and live code. It came up with a handful of questions. I noticed they occurred I'd implied a direction without explicitly stating it. There was also an incident where Claude could not parse my guidance without bringing it into conflict with itself. I addressed the questions in order. And, after another ~30 minutes the demo met the acceptance criteria in the first phase of the build plan.
 
-<img src="img/AML_DEMO_Complex_Decision_Tree.png" alt="Scenario builder page focused on the execution log.">
+<img src="/img/AML_DEMO_Complex_Decision_tree.png" alt="Scenario builder page focused on the execution log." class="float-right w-full sm:w-1/2 sm:ml-6 mb-4 rounded">
 
 ## Finding my stride
 
@@ -94,7 +94,7 @@ From this list of 20 typologies I had the Claude system build over 100 rules and
 
 The resulting left-side bar split into two collapseable sections. The search and filters applied to both the scenarios and rules. This allowed for quick filtering and sorting to identify any given rule or scenario in a matter of seconds. It would scale to hundreds or thousands of entries. The analyst could find what they needed and either edit it or drag it into the scenario they were working on. They could also see if scenarios matched rules or typologies they needed to work with. I felt confident it would be a win. I was almost right.
 
-<img src="img/AML_DEMO_left_bar.png" alt="Scenario builder page focused on the search and filter of rules and scenarios.">
+<img src="/img/AML_DEMO_left_bar.png" alt="Scenario builder page focused on the search and filter of rules and scenarios." class="float-left w-full sm:w-1/2 sm:mr-6 mb-4 rounded">
 
 During the debrief the interviewers questioned my decision. I learned many analysts combine rules into "rule sets". These sets are then used for detection and investigation. I didn't have a concept of "rule sets" in my design. I asked what the interviewers meant by it. They described related rules, with different combinations of variables and thresholds, grouped together. It could provide specificity or identify if something was suspicious across many dimensions. With the new information a dedicated rules page would make sense for exploring, categorizing, and grouping rules at scale. My solution could then have a third section for "rule sets" to allow the analyst to put them into a scenario in the place of a singular rule. 
 
@@ -108,7 +108,7 @@ I chose to model the Scenario builder on a visual representation of LangGraph fr
 
 An execution log provides immediate feedback to the analyst as they develop scenarios. They can run iterations to see how their changes affect performance in real time. This provides them with feedback as they build, something many products don't provide. Elevating test, evaluation, and iteration tools is critical for building trust in LLM-based systems. Keeping it within the same screen as development allows for rapid innovation.
 
-<img src="img/AML_DEMO_Execution_Log.png" alt="Scenario builder page focused on the execution log.">
+<img src="/img/AML_DEMO_Execution_Log.png" alt="Scenario builder page focused on the execution log." class="float-right w-full sm:w-1/2 sm:ml-6 mb-4 rounded">
 
 One off testing will not expose systemic issues. It isn't meant to. It's a gut check to check whether your choices are plausible. Systems need scalable testing on data sets to supplement ad hoc testing. The Scenario Builder incorporates this by having ga "Run Test" function. 
 
@@ -116,7 +116,7 @@ One off testing will not expose systemic issues. It isn't meant to. It's a gut c
 
 A friend told me that AML does not have ground truth. Organizations rarely receive feedback on their submissions of SAR (Suspicious Activity Reports). This protects the independence of regulators. It also ensures organizations don't over-index on particular dimensions based on feedback. So, what can we do to scale testing? 
 
-<img src="img/AML_DEMO_Scenario_Backtesting.png" alt="Scenario builder page focused on the execution log.">
+<img src="/img/AML_DEMO_Scenario_Backtest.png" alt="Scenario builder page focused on the execution log." class="float-left w-full sm:w-1/2 sm:mr-6 mb-4 rounded">
 
 The answer is rather simple: use historical data. This is not easy put in place if the system doesn't already catalogue every transaction and match it to detection outputs. I made the assumption that the system I built the demo for could handle it, and so had Claude mock up test data. Using this data allowed me to live test every scenario during the demo, changing the scenario at will. It demonstrated the power of using previous data to learn patterns and improve detections over time. 
 

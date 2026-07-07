@@ -36,6 +36,7 @@ I feel a lot of friction about using agents because I don't know if they provide
 | **Create a Mod for a video game** | Claude Cowork | Create a mod for Banner Lord 2 to add a new story and more depth | Medium | High | Unknown| Not Started |
 | **Oxalate Estimator** | VLM + Agent | Estimating the amount of oxalates in food based on images, recipes, or labes | Medium | High | Initial POC showed promise but continually broke when given a recipe | Just Started|
 | **Irrigation System** | Agent | Using an agent to gather upcoming weather information from the internet and determine if an automated watering system should run. | Medium | Medium | Unknown | Not Started | 
+| **Catalog old writings** | Claude Cowork | Using Claude Cowork to review all of my disjointed notes on a fictional universe I created in 2011 | Medium | High | Unknown | Not Started | 
 
 Of the use cases above, three of the tasks (Triage bugs in live code, Demo creation, Creating an Agent) fall directly within what I believe agents to be useful for. I will still test them so I do not end up focusing only on peripheral use cases of the systems. The creators of this technology want people to believe it can support or replace human work across many domains. I consider this exploration an expansion of the years of risk management I've been doing in the space at a more personal level.
 
@@ -44,7 +45,7 @@ Of the use cases above, three of the tasks (Triage bugs in live code, Demo creat
 
 | Potential Use Case | Last Activity Date | Current Status | Notes | Link (if available)| 
 | :--- | :--- | :--- | :--- | :---|
-| **Design a custom logo/wordmark** | June 17, 2026|✅| This took me the better part of a week's worth of Claude Credits on Free Tier.| N/A | 
+| **Design a custom logo/wordmark** | June 17, 2026|✅| This took me the better part of a week's worth of Claude Credits on Free Tier.| [File](https://butterswords.com/img/logo/logo.svg) | 
 | **Resume rewrites for specific jobs** |July 2, 2026 |✅ | I am unsure whether the changes made are useful. | N/A | 
 | **Draft a business plan** | May 30, 20206 |✅ | The framework was helpful, the financials... not so much. |  N/A | 
 | **Create a Mod for a video game** | June 22, 2026 |🆕 | | N/A | 
@@ -53,3 +54,4 @@ Of the use cases above, three of the tasks (Triage bugs in live code, Demo creat
 | **Triage bugs in live code** | June 3, 2026 |✅ | Definitely a place worth exploring more. | N/A | 
 | **Demo Creation** | June 24, 2026 |✅ | This helped me build quickly once I figured out how best to shape my own experience. |  [Building demos with Claude](../building-demos-using-claude)
 | **Creating an Agent** | June 2, 2026| ✅ | It's tough to code in front of people in 30 minutes, especially when they expect you to prompt Claude and then just chat... | N/A | 
+| **Cataloging old writings** | July 7, 2026| 🆕 | I have 15 years of notes on a universe I created for writing speculative fiction in. I want to see if agents can do the work of cataloging and transcribing my notebooks so I can focus on revising the world based on my experiences. | N/A | 
