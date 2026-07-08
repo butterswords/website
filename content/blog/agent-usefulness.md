@@ -6,7 +6,7 @@ author: "Nathan Butters"
 image: "https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fd3083d3f40bb2b6f477901cc9a240738d3dd1371-2401x1000.png&w=3840&q=75"
 description: "The starting point for my exploration of the question: how can I use agents?"
 tags: ["Agents", "Claude", "Vibe Coding", "Spec-driven Development", "AI in Design"]
-categories: ["PSA"]
+categories: ["PSA", "Reflections"]
 series: ["How can I use Agents?"]
 weight: 100
 ---

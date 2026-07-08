@@ -1,0 +1,133 @@
+{{ define "meta_tags" }}
+
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="{{ .Title }}">
+
+{{ if .Params.image }}
+{{ with .Params.image }}
+<meta property="og:image" content="{{ . | absURL }}">
+{{ end }}
+{{ else }}
+<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image | absURL }}">
+{{ end }}
+
+{{- if .Description }}
+<meta name="description" content="{{ .Description }}" />
+<meta property="og:description" content="{{ .Description }}" />
+<meta property="twitter:description" content="{{ .Description }}" />
+{{- else if .Summary }}
+<meta name="description" content="{{ .Summary }}" />
+<meta property="og:description" content="{{ .Summary }}" />
+<meta property="twitter:description" content="{{ .Summary }}" />
+{{- else if .Site.Params.description }}
+<meta name="description" content="{{ .Site.Params.description }}" />
+<meta property="og:description" content="{{ .Site.Params.description }}" />
+<meta property="twitter:description" content="{{ .Site.Params.description }}" />
+{{- end }}
+
+{{ end }}
+
+{{ define "main" }}
+<div class="mx-auto my-10 max-w-6xl px-4 sm:px-6 lg:px-8">
+    <header class="mb-8 text-center md:text-left">
+        <h1 class="text-3xl md:text-5xl font-extrabold text-tlgray-800 mb-6 leading-tight">{{ .Title }}</h1>
+    </header>
+
+    <div class="content prose prose-lg max-w-none text-tlgray-700 mb-10">{{ .Content }}</div>
+
+    {{ $allPages := .Pages.ByDate.Reverse }}
+
+    {{/* Build a deduplicated, alphabetized category list across all posts (slug -> display name).
+         Filtering by category rather than tags is deliberate: categories are meant to stay a
+         small, curated set, so the filter bar doesn't grow unbounded as tags do. */}}
+    {{ $seenSlugs := slice }}
+    {{ $categoryList := slice }}
+    {{ range $allPages }}
+        {{ range (.Params.categories | default slice) }}
+            {{ $slug := . | urlize }}
+            {{ if not (in $seenSlugs $slug) }}
+                {{ $seenSlugs = $seenSlugs | append $slug }}
+                {{ $categoryList = $categoryList | append (dict "slug" $slug "name" .) }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+    {{ $categoryList = sort $categoryList "name" }}
+
+    {{ if gt (len $allPages) 0 }}
+    <div id="blog-filters" class="flex flex-wrap gap-2 mb-8">
+        <button type="button" class="blog-filter-btn is-active px-4 py-2 text-sm font-semibold border border-blue-600 bg-blue-600 text-white transition-colors" data-filter="all">
+            All
+        </button>
+        {{ range $categoryList }}
+        <button type="button" class="blog-filter-btn px-4 py-2 text-sm font-semibold border border-tlgray-400 text-tlgray-700 hover:bg-tlgray-200/40 transition-colors" data-filter="{{ .slug }}">
+            {{ .name }}
+        </button>
+        {{ end }}
+    </div>
+
+    <div id="blog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {{ range $allPages }}
+        {{ partial "summary.html" . }}
+        {{ end }}
+    </div>
+    {{ else }}
+    <p class="text-tlgray-500 italic">No posts yet.</p>
+    {{ end }}
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+{{ if gt (len .Pages) 0 }}
+<script>
+(function () {
+  var filterBar = document.getElementById('blog-filters');
+  var grid = document.getElementById('blog-grid');
+  if (!filterBar || !grid) return;
+  var buttons = filterBar.querySelectorAll('.blog-filter-btn');
+  var cards = grid.querySelectorAll('.blog-card');
+
+  function setActive(activeBtn) {
+    buttons.forEach(function (b) {
+      b.classList.remove('is-active', 'bg-blue-600', 'text-white', 'border-blue-600');
+      b.classList.add('border-tlgray-400', 'text-tlgray-700');
+    });
+    activeBtn.classList.add('is-active', 'bg-blue-600', 'text-white', 'border-blue-600');
+    activeBtn.classList.remove('border-tlgray-400', 'text-tlgray-700');
+  }
+
+  function applyFilter(filter) {
+    cards.forEach(function (card) {
+      var categories = (card.dataset.categories || '').split(' ');
+      card.style.display = (filter === 'all' || categories.indexOf(filter) !== -1) ? '' : 'none';
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setActive(btn);
+      applyFilter(btn.dataset.filter);
+    });
+  });
+
+  // Deep-link support: /blog/?category=<slug> pre-selects the matching filter.
+  var params = new URLSearchParams(window.location.search);
+  var requestedCategory = params.get('category');
+  if (requestedCategory) {
+    var normalized = decodeURIComponent(requestedCategory).toLowerCase();
+    var match = null;
+    buttons.forEach(function (b) {
+      if (b.dataset.filter.toLowerCase() === normalized) match = b;
+    });
+    if (match) {
+      setActive(match);
+      applyFilter(match.dataset.filter);
+    }
+  }
+})();
+</script>
+{{ end }}
+{{ end }}

@@ -5,15 +5,15 @@ draft: false
 author: "Nathan Butters"
 image: "img/AML_DEMO_Alert_Queue.png"
 description: "Exploring how useful Claude Code can be for building a demo; or, a comparison of vibe coding and spec-driven development."
-stack: ["Claude Code", "React JS", "Ollama", "LangGraph"]
+tech_stack: ["Claude Code", "React JS", "Ollama", "LangGraph"]
 tags: ["Demo", "Risk Management", "Fintech", "Automation", "Agents", "Claude", "Vibe Coding", "Spec-driven Development"]
-categories: ["Jobs", "PSA"]
+categories: ["Career", "PSA"]
 series: ["How can I use Agents?"]
 weight: 100
 ---
 
 <div class="bg-tlgray-200/40 border-l-4 border-blue-600 px-6 py-4 mb-8">
-<strong>BLUF:</strong> Requirements engineering has increased in importance in challenging ways at the pace of <em>AI</em>. It's on those of us who design and build products and systems to remedy the situation.
+<strong>BLUF:</strong> Requirements engineering has increased in importance in challenging ways at the pace of <em>AI</em>. It's on those of us who design and build products and systems to find the path forward.
 </div>
 
 One company I interviewed for asked me to build a demo over the course of a week. They chose a problem space central to their mission, and which I know very little about. They gave me the assignment on Monday morning, and wanted me to complete it within 5 business days. I gave myself the goal of getting it done by Friday night so I could enjoy Father's Day with my son. This meant I had under 5 business days to research, design, and implement the demo. I then had to record a 10 minute demo and prepare for a follow up debrief. I decided to use the Claude systems to organize and execute the project because of a conversation with a friend about the [usefulness of agents]("blog/agent-usefulness.md") . It felt like a good, "core" use case to explore. It proved informative.
@@ -141,4 +141,4 @@ I cannot recount all the choices I made for the demo so I will share a few choic
 
 I enjoyed the experience of building this demo. The first day was rough for me. Yet, when I reclaimed my place to use Claude the way I needed to it became much better. I am not sold on this technology providing efficiency gains, or even value, beyond exploratory phases. I will continue to reflect on my experience and the other ways I use this technology. 
 
-For more information on the demo, and the video, check out the [project page](/content/projects/aml-workflow-automation-demo.md).
+For more information on the demo, and the video, check out the [project page](/projects/aml-workflow-automation-demo/).

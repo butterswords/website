@@ -6,11 +6,10 @@ date: "2021-01-23"
 description: "How I picked a robot for my kid and some thoughts for other parents."
 draft: false
 tags: [
-    "parenting",
     "robots",
     "education"
 ]
-categories: []
+categories: ["Parenting", "PSA"]
 series: []
 weight: 100
 ---
