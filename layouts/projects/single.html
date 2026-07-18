@@ -1,95 +1,50 @@
-{{ define "meta_tags" }}
-
-<meta property="og:site_name" content="{{ .Site.Title }}" />
-<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="{{ .Permalink }}" />
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="{{ .Title }}">
-
-{{ if .Params.image }}
-{{ with .Params.image }}
-<meta property="og:image" content="{{ . | absURL }}">
-{{ end }}
-{{ else }}
-<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image | absURL }}">
-{{ end }}
-
-{{- if .Description }}
-<meta name="description" content="{{ .Description }}" />
-<meta property="og:description" content="{{ .Description }}" />
-<meta property="twitter:description" content="{{ .Description }}" />
-{{- else if .Summary }}
-<meta name="description" content="{{ .Summary }}" />
-<meta property="og:description" content="{{ .Summary }}" />
-<meta property="twitter:description" content="{{ .Summary }}" />
-{{- end }}
-
-{{ end }}
-
 {{ define "main" }}
-<div class="mx-auto my-10 max-w-6xl px-4 sm:px-6 lg:px-8">
-  <article>
-    <header class="mb-8 text-center md:text-left">
-        {{ if .Params.image }}
-        {{ partial "page-image.html" (dict "src" .Params.image "alt" .Title "context" "banner") }}
+
+{{ $rows := slice }}
+{{ with .Params.status }}{{ $rows = $rows | append (dict "label" "STATUS" "badge" .) }}{{ end }}
+{{ with .Params.role }}{{ $rows = $rows | append (dict "label" "ROLE" "text" .) }}{{ end }}
+{{ with .Params.org }}{{ $rows = $rows | append (dict "label" "ORG" "text" .) }}{{ end }}
+{{ with .Params.stack }}{{ $rows = $rows | append (dict "label" "STACK" "text" (delimit . " · ")) }}{{ end }}
+{{ $n := len $rows }}
+
+<div class="px-6 sm:px-12 py-10 lg:py-11">
+  <article class="max-w-[660px] mx-auto">
+
+    <div class="font-mono font-medium text-[11px] tracking-[.12em] mb-3.5" style="color:var(--color-mono-label)">~/PROJECTS/{{ upper .File.ContentBaseName }}</div>
+    <h1 class="font-sans font-semibold text-[30px] tracking-[-.01em] mb-[18px]" style="color:var(--color-ink)">{{ .Title }}</h1>
+
+    {{ if gt $n 0 }}
+    <div class="mb-[22px]" style="background:var(--color-card);border:1px solid var(--color-border-strong);border-radius:var(--radius-spec);overflow:hidden">
+      <div class="grid grid-cols-[110px_1fr] font-mono text-[12.5px]">
+        {{ range $i, $r := $rows }}
+        <span class="px-[14px] py-[9px]{{ if lt (add $i 1) $n }} border-b{{ end }}" style="color:var(--color-mono-label);border-color:var(--color-hairline)">{{ $r.label }}</span>
+        <span class="px-[14px] py-[9px]{{ if lt (add $i 1) $n }} border-b{{ end }}" style="border-color:var(--color-hairline);color:var(--color-ink);{{ if not $r.badge }}font-family:var(--font-sans);{{ end }}">
+          {{ if $r.badge }}{{ partial "status-badge.html" $r.badge }}{{ else }}{{ $r.text }}{{ end }}
+        </span>
         {{ end }}
-
-        {{ with .Params.status }}
-        {{ $color := "bg-tlgray-200 text-tlgray-800" }}
-        {{ if eq . "Completed" }}{{ $color = "bg-green-100 text-green-800" }}{{ end }}
-        {{ if eq . "Ongoing" }}{{ $color = "bg-blue-100 text-blue-700" }}{{ end }}
-        {{ if eq . "Concept" }}{{ $color = "bg-amber-100 text-amber-800" }}{{ end }}
-        {{ if eq . "On hold" }}{{ $color = "bg-tlgray-200 text-tlgray-700" }}{{ end }}
-        <span class="inline-block text-xs font-semibold uppercase tracking-wide px-3 py-1 mb-4 {{ $color }}">{{ . }}</span>
-        {{ end }}
-
-        <h1 class="text-3xl md:text-5xl font-extrabold text-tlgray-800 mb-6 leading-tight">{{ .Title }}</h1>
-
-        <div class="flex flex-wrap items-center justify-center md:justify-start text-sm text-tlgray-500 gap-6 mb-6 border-b border-tlgray-200 pb-6">
-            {{ if .Date }}
-            <div class="flex items-center">
-                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-            </div>
-            {{ end }}
-            {{ if .Params.role }}
-            <div class="flex items-center">
-                <span class="font-medium text-tlgray-700 mr-1">Role:</span> {{ .Params.role }}
-            </div>
-            {{ end }}
-            {{ if .Params.org }}
-            <div class="flex items-center">
-                <span class="font-medium text-tlgray-700 mr-1">Org:</span> {{ .Params.org }}
-            </div>
-            {{ end }}
-            {{ with .Params.stack }}
-            <div class="flex flex-wrap items-center gap-2">
-                {{ range . }}
-                <span class="bg-tlgray-200/60 text-tlgray-700 text-xs px-2 py-1">{{ . }}</span>
-                {{ end }}
-            </div>
-            {{ end }}
-        </div>
-
-        {{ if or .Params.repo_url .Params.demo_url }}
-        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            {{ with .Params.demo_url }}
-            <a href="{{ . | relURL }}" class="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors">
-                View Demo
-            </a>
-            {{ end }}
-            {{ with .Params.repo_url }}
-            <a href="{{ . | relURL }}" class="inline-flex items-center justify-center px-8 py-3 border border-tlgray-400 text-tlgray-800 font-semibold hover:bg-tlgray-200/40 transition-colors">
-                View Repository
-            </a>
-            {{ end }}
-        </div>
-        {{ end }}
-    </header>
-
-    <div class="content prose prose-lg max-w-none text-tlgray-700 leading-relaxed mx-auto">
-        {{ .Content }}
+      </div>
     </div>
+    {{ end }}
+
+    {{ if or .Params.demo_url .Params.repo_url }}
+    <div class="flex flex-wrap gap-3 mb-6">
+      {{ with .Params.demo_url }}
+      <a href="{{ . | relURL }}" target="_blank" rel="noopener" class="inline-flex px-5 py-[11px] font-sans font-medium text-[13px]" style="background:var(--color-ink);color:var(--color-paper);border-radius:var(--radius-btn)">Live demo ↗</a>
+      {{ end }}
+      {{ with .Params.repo_url }}
+      <a href="{{ . | relURL }}" target="_blank" rel="noopener" class="inline-flex px-5 py-[11px] font-sans font-medium text-[13px] border" style="border-color:var(--color-border-strong);color:var(--color-ink);background:var(--color-paper);border-radius:var(--radius-btn)">Repository ↗</a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="prose max-w-none">
+      {{ .Content }}
+    </div>
+
   </article>
 </div>
+{{ end }}
+
+{{ define "scripts" }}
+{{ partial "lightbox.html" . }}
 {{ end }}

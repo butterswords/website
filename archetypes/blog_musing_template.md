@@ -20,7 +20,7 @@ posts that aren't primarily technical.
 Delete this comment block before publishing.
 -->
 
-<div class="bg-tlgray-200/40 border-l-4 border-blue-600 px-6 py-4 mb-8">
+<div class="bluf">
 <strong>BLUF:</strong> The one belief, realization, or piece of advice
 you want the reader to walk away with.
 </div>

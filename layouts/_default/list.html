@@ -1,48 +1,22 @@
-{{ define "meta_tags" }}
-
-<meta property="og:site_name" content="{{ .Site.Title }}" />
-<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="{{ .Permalink }}" />
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="{{ .Title }}">
-
-{{ if .Params.image }}
-{{ with .Params.image }}
-<meta property="og:image" content="{{ . | absURL }}">
-{{ end }}
-{{ else }}
-<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image | absURL }}">
-{{ end }}
-
-{{- if .Description }}
-<meta name="description" content="{{ .Description }}" />
-<meta property="og:description" content="{{ .Description }}" />
-<meta property="twitter:description" content="{{ .Description }}" />
-{{- else if .Summary }}
-<meta name="description" content="{{ .Summary }}" />
-<meta property="og:description" content="{{ .Summary }}" />
-<meta property="twitter:description" content="{{ .Summary }}" />
-{{- else if .Site.Params.description }}
-<meta name="description" content="{{ .Site.Params.description }}" />
-<meta property="og:description" content="{{ .Site.Params.description }}" />
-<meta property="twitter:description" content="{{ .Site.Params.description }}" />
-{{- end }}
-
-{{ end }}
-
 {{ define "main" }}
-<div class="mx-auto my-10 max-w-6xl px-4 sm:px-6 lg:px-8">
-    <header class="mb-8 text-center md:text-left">
-        <h1 class="text-3xl md:text-5xl font-extrabold text-tlgray-800 mb-6 leading-tight">{{.Title}}</h1>
-    </header>
-    <div class="content py-1">{{.Content}}</div>
-    {{ $paginator := .Paginate (where .Data.Pages "Type" "in" site.Params.mainSections) 6 }}
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    {{ range $paginator.Pages }}
-      {{ partial "summary.html" . }}
-    {{ end }}
+
+<div class="px-6 sm:px-12 py-10 lg:py-11">
+  <div class="max-w-[660px] mx-auto">
+
+    {{ partial "page-head.html" (dict "path" (printf "~/%s" (upper .Title)) "title" .Title) }}
+
+    <div class="prose max-w-none">
+      {{ .Content }}
     </div>
-    {{ partial "paginator.html" . }}
+
+    {{ if gt (len .Pages) 0 }}
+    <ul class="flex flex-col gap-2 mt-6">
+      {{ range .Pages }}
+      <li><a href="{{ .RelPermalink }}" style="color:var(--color-ink)">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+
+  </div>
 </div>
 {{ end }}

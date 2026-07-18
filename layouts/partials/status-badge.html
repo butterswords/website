@@ -1,0 +1,8 @@
+{{- $status := . -}}
+{{- if eq $status "Completed" -}}
+<span class="inline-flex px-[9px] py-[3px] rounded-full font-mono font-medium text-[10px]" style="background:var(--color-status-completed-bg);color:var(--color-status-completed-fg)">{{ upper $status }}</span>
+{{- else if eq $status "Ongoing" -}}
+<span class="inline-flex px-[9px] py-[3px] rounded-full font-mono font-medium text-[10px]" style="background:var(--color-status-ongoing-bg);color:var(--color-status-ongoing-fg)">{{ upper $status }}</span>
+{{- else -}}
+<span class="inline-flex px-[9px] py-[3px] rounded-full font-mono font-medium text-[10px] border" style="border-color:var(--color-border-strong);color:var(--color-serif-muted)">{{ upper $status }}</span>
+{{- end -}}

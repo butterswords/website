@@ -1,82 +1,30 @@
-{{ define "meta_tags" }}
-
-<meta property="og:site_name" content="{{ .Site.Title }}" />
-<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="{{ .Permalink }}" />
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="{{ .Title }}">
-
-{{ if .Params.image }}
-{{ with .Params.image }}
-<meta property="og:image" content="{{ . | absURL }}">
-{{ end }}
-{{ else }}
-<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image | absURL }}">
-{{ end }}
-
-{{- if .Description }}
-<meta name="description" content="{{ .Description }}" />
-<meta property="og:description" content="{{ .Description }}" />
-<meta property="twitter:description" content="{{ .Description }}" />
-{{- else if .Summary }}
-<meta name="description" content="{{ .Summary }}" />
-<meta property="og:description" content="{{ .Summary }}" />
-<meta property="twitter:description" content="{{ .Summary }}" />
-{{- end }}
-
-{{ end }}
-
 {{ define "main" }}
-<div class="mx-auto my-10 max-w-6xl px-4 sm:px-6 lg:px-8">
-  <article>
-    <header class="mb-8 text-center md:text-left">
-        {{ if .Params.image }}
-        {{ partial "page-image.html" (dict "src" .Params.image "alt" .Title "context" "banner") }}
-        {{ end }}
 
-        {{ with .Params.category }}
-        {{ $color := "bg-tlgray-200 text-tlgray-800" }}
-        {{ if eq . "Formative" }}{{ $color = "bg-purple-100 text-purple-800" }}{{ end }}
-        {{ if eq . "Inspirations" }}{{ $color = "bg-pink-100 text-pink-800" }}{{ end }}
-        {{ if eq . "In Progress" }}{{ $color = "bg-blue-100 text-blue-700" }}{{ end }}
-        {{ if eq . "Backlog" }}{{ $color = "bg-tlgray-200 text-tlgray-700" }}{{ end }}
-        {{ if eq . "Recommendations" }}{{ $color = "bg-green-100 text-green-800" }}{{ end }}
-        {{ if eq . "Reviews" }}{{ $color = "bg-amber-100 text-amber-800" }}{{ end }}
-        <span class="inline-block text-xs font-semibold uppercase tracking-wide px-3 py-1 mb-4 {{ $color }}">{{ . }}</span>
-        {{ end }}
+<div class="px-6 sm:px-12 py-10 lg:py-11">
+  <article class="max-w-[660px] mx-auto">
 
-        <h1 class="text-3xl md:text-5xl font-extrabold text-tlgray-800 mb-6 leading-tight">{{ .Title }}</h1>
+    <div class="font-mono font-medium text-[11px] tracking-[.12em] mb-3.5" style="color:var(--color-mono-label)">~/BOOKSHELF/{{ upper .File.ContentBaseName }}</div>
 
-        {{ with .Params.author }}
-        <p class="text-lg text-tlgray-500 mb-4">by {{ . }}</p>
-        {{ end }}
-
-        <div class="flex flex-wrap items-center justify-center md:justify-start text-sm text-tlgray-500 gap-6 mb-6 border-b border-tlgray-200 pb-6">
-            {{ if .Date }}
-            <div class="flex items-center">
-                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-            </div>
-            {{ end }}
-            {{ with .Params.rating }}
-            <div class="flex items-center">
-                <span class="font-medium text-tlgray-700 mr-1">Rating:</span> {{ . }}
-            </div>
-            {{ end }}
-        </div>
-
-        {{ with .Params.external_url }}
-        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a href="{{ . | relURL }}" class="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors">
-                View Book
-            </a>
-        </div>
-        {{ end }}
-    </header>
-
-    <div class="content prose prose-lg max-w-none text-tlgray-700 leading-relaxed mx-auto">
-        {{ .Content }}
+    <div class="flex items-center gap-2.5 mb-3">
+      {{ with .Params.category }}{{ partial "category-badge.html" . }}{{ end }}
+      {{ with .Params.rating }}<span class="font-mono font-medium text-[11px]" style="color:var(--color-heather)">★ {{ . }}</span>{{ end }}
     </div>
+
+    <h1 class="font-serif font-semibold text-[30px] tracking-[-.01em] mb-1.5" style="color:var(--color-ink)">{{ .Title }}</h1>
+    {{ with .Params.author }}<div class="font-sans text-[13.5px] mb-5.5" style="color:var(--color-iron)">{{ . }}</div>{{ end }}
+
+    <div class="prose max-w-none mb-6">
+      {{ .Content }}
+    </div>
+
+    {{ with .Params.external_url }}
+    <a href="{{ . | relURL }}" target="_blank" rel="noopener" class="inline-flex px-[22px] py-[11px] font-sans font-semibold text-[13px]" style="border:1.5px solid var(--color-ink);border-radius:var(--radius-btn);color:var(--color-ink)">View book ↗</a>
+    {{ end }}
+
   </article>
 </div>
+{{ end }}
+
+{{ define "scripts" }}
+{{ partial "lightbox.html" . }}
 {{ end }}

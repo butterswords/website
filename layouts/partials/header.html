@@ -1,38 +1,17 @@
-<header id="site-header" class="bg-white border-b border-tlgray-200">
-    <div id="overlay" class="fixed inset-0 bg-black/90 backdrop-blur-md flex justify-center items-center z-50 transition-opacity duration-300 opacity-0 pointer-events-none" aria-hidden="true">
-        <ul class="text-center list-none text-white space-y-6">
-            {{ range .Site.Menus.main }}
-            <li class="p-2 transform transition-transform hover:scale-110">
-                <a href="{{ .URL | safeURL }}" class="text-4xl font-semibold hover:text-gray-300 transition-colors">
-                    <span>{{ .Name }}</span>
-                </a>
-            </li>
-            {{ end }}
-        </ul>
-    </div>
-    <nav class="flex items-center justify-between flex-wrap bg-opacity-100 p-8">
-        <div class="flex items-center shrink-0 text-xl text-grey-900 mr-6">
-            <a href="{{ .Site.BaseURL }}"><img alt="{{ .Site.Params.logo.alt }}"
-                    class="{{ .Site.Params.logo.size }} mr-3" src="{{ .Site.Params.logo.main | relURL }}"></a>
-        </div>
-        <div class="block lg:hidden">
-            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
-                <span class="top"></span>
-                <span class="middle"></span>
-                <span class="bottom"></span>
-            </div>
-        </div>
-        <div class="hidden w-full grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
-            <div class="text-lg lg:grow">
-            </div>
-            <div class="text-lg">
-                {{ range .Site.Menus.main }}
-                <a href="{{ .URL | safeURL }}"
-                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
-                    {{ .Name }}
-                </a>
-                {{ end }}
-            </div>
-        </div>
-    </nav>
+<header class="flex items-center justify-between flex-wrap gap-y-3 gap-x-6 px-6 sm:px-12 py-4" style="background:var(--color-chrome);color:var(--color-chrome-text)">
+  <div class="flex items-center gap-3">
+    <a href="{{ "/" | relURL }}" class="inline-flex items-center" aria-label="{{ .Site.Title }} home">
+      {{ partial "wordmark.html" . }}
+    </a>
+    {{ if .IsHome }}
+    <span class="hidden sm:inline font-mono text-[10.5px] tracking-[.1em]" style="color:var(--color-chrome-muted-2)">SYSTEM SAFETY DEVELOPMENT, LLC</span>
+    {{ end }}
+  </div>
+  <div class="flex items-center gap-5 sm:gap-6 font-sans font-medium text-[13px]">
+    {{- range .Site.Menus.main }}
+    {{- $active := or (eq $.RelPermalink .URL) (and (ne .URL "/") (strings.HasPrefix $.RelPermalink .URL)) }}
+    <a href="{{ .URL | safeURL }}" class="hover:opacity-80 transition-opacity" style="color:{{ if $active }}var(--color-heather-tint){{ else }}var(--color-chrome-text){{ end }}">{{ .Name }}</a>
+    {{- end }}
+    <button type="button" id="theme-toggle" aria-label="Toggle dark mode" class="inline-flex items-center justify-center w-[30px] h-[30px] rounded-full text-[13px] shrink-0" style="border:1px solid #39434D">◐</button>
+  </div>
 </header>

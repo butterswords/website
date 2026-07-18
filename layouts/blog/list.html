@@ -1,132 +1,115 @@
-{{ define "meta_tags" }}
-
-<meta property="og:site_name" content="{{ .Site.Title }}" />
-<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="{{ .Permalink }}" />
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="{{ .Title }}">
-
-{{ if .Params.image }}
-{{ with .Params.image }}
-<meta property="og:image" content="{{ . | absURL }}">
-{{ end }}
-{{ else }}
-<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image | absURL }}">
-{{ end }}
-
-{{- if .Description }}
-<meta name="description" content="{{ .Description }}" />
-<meta property="og:description" content="{{ .Description }}" />
-<meta property="twitter:description" content="{{ .Description }}" />
-{{- else if .Summary }}
-<meta name="description" content="{{ .Summary }}" />
-<meta property="og:description" content="{{ .Summary }}" />
-<meta property="twitter:description" content="{{ .Summary }}" />
-{{- else if .Site.Params.description }}
-<meta name="description" content="{{ .Site.Params.description }}" />
-<meta property="og:description" content="{{ .Site.Params.description }}" />
-<meta property="twitter:description" content="{{ .Site.Params.description }}" />
-{{- end }}
-
-{{ end }}
-
 {{ define "main" }}
-<div class="mx-auto my-10 max-w-6xl px-4 sm:px-6 lg:px-8">
-    <header class="mb-8 text-center md:text-left">
-        <h1 class="text-3xl md:text-5xl font-extrabold text-tlgray-800 mb-6 leading-tight">{{ .Title }}</h1>
-    </header>
 
-    <div class="content prose prose-lg max-w-none text-tlgray-700 mb-10">{{ .Content }}</div>
+{{ $posts := (where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
 
-    {{ $allPages := .Pages.ByDate.Reverse }}
+{{ $allSeries := slice }}
+{{ $allTags := slice }}
+{{ range $posts }}
+  {{ $allSeries = $allSeries | union .Params.series }}
+  {{ $allTags = $allTags | union .Params.tags }}
+{{ end }}
+{{ $allSeries = sort $allSeries }}
+{{ $allTags = sort $allTags }}
 
-    {{/* Build a deduplicated, alphabetized category list across all posts (slug -> display name).
-         Filtering by category rather than tags is deliberate: categories are meant to stay a
-         small, curated set, so the filter bar doesn't grow unbounded as tags do. */}}
-    {{ $seenSlugs := slice }}
-    {{ $categoryList := slice }}
-    {{ range $allPages }}
-        {{ range (.Params.categories | default slice) }}
-            {{ $slug := . | urlize }}
-            {{ if not (in $seenSlugs $slug) }}
-                {{ $seenSlugs = $seenSlugs | append $slug }}
-                {{ $categoryList = $categoryList | append (dict "slug" $slug "name" .) }}
-            {{ end }}
-        {{ end }}
-    {{ end }}
-    {{ $categoryList = sort $categoryList "name" }}
+<div class="px-6 sm:px-12 py-10 lg:py-11">
+  <div class="max-w-[1000px] mx-auto">
 
-    {{ if gt (len $allPages) 0 }}
-    <div id="blog-filters" class="flex flex-wrap gap-2 mb-8">
-        <button type="button" class="blog-filter-btn is-active px-4 py-2 text-sm font-semibold border border-blue-600 bg-blue-600 text-white transition-colors" data-filter="all">
-            All
-        </button>
-        {{ range $categoryList }}
-        <button type="button" class="blog-filter-btn px-4 py-2 text-sm font-semibold border border-tlgray-400 text-tlgray-700 hover:bg-tlgray-200/40 transition-colors" data-filter="{{ .slug }}">
-            {{ .name }}
-        </button>
-        {{ end }}
+    {{ partial "page-head.html" (dict "path" "~/BLOG" "title" "The words" "deck" "Working notes on system safety, agents, and building things that shouldn't hurt people.") }}
+
+    {{ if gt (len $posts) 0 }}
+    <div id="blog-filters" class="flex flex-wrap gap-2 mb-6 font-mono font-medium text-[11px]">
+      <a href="{{ "/blog/" | relURL }}" data-filter-type="all" data-filter-value="" class="px-[11px] py-[5px]" style="background:var(--color-ink);color:var(--color-heather-tint);border-radius:var(--radius-chip)">all</a>
+      {{ range $allSeries }}
+      <a href="{{ printf "/blog/?series=%s" (urlquery .) | relURL }}" data-filter-type="series" data-filter-value="{{ lower . }}" class="px-[11px] py-[5px] border" style="border-color:var(--color-border-strong);color:var(--color-serif-muted);border-radius:var(--radius-chip)">series: {{ . }}</a>
+      {{ end }}
+      {{ range $allTags }}
+      <a href="{{ printf "/blog/?tag=%s" (urlquery .) | relURL }}" data-filter-type="tag" data-filter-value="{{ lower . }}" class="px-[11px] py-[5px] border" style="border-color:var(--color-border-strong);color:var(--color-serif-muted);border-radius:var(--radius-chip)">#{{ lower . }}</a>
+      {{ end }}
     </div>
 
-    <div id="blog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {{ range $allPages }}
-        {{ partial "summary.html" . }}
-        {{ end }}
+    {{ $n := len $posts }}
+    <div id="blog-rows" class="flex flex-col">
+      {{ range $i, $p := $posts }}
+      {{ $series := "" }}
+      {{ with $p.Params.series }}{{ with index . 0 }}{{ $series = . }}{{ end }}{{ end }}
+      {{ $tagList := $p.Params.tags | default slice }}
+      <a href="{{ $p.RelPermalink }}"
+         data-series="{{ lower $series }}"
+         data-tags="{{ delimit (apply $tagList "lower" ".") "|" }}"
+         class="grid grid-cols-1 sm:grid-cols-[96px_1fr_auto] gap-1.5 sm:gap-5 sm:items-baseline py-4{{ if lt (add $i 1) $n }} border-b{{ end }}"
+         style="border-color:var(--color-border)">
+        <span class="font-mono text-xs" style="color:var(--color-mono-muted)">{{ $p.Date.Format "2006-01-02" }}</span>
+        <span class="min-w-0">
+          <span class="block font-sans font-semibold text-[17px]" style="color:var(--color-ink)">{{ $p.Title }}</span>
+          {{ with $p.Description }}<span class="block font-sans text-[13px] leading-[1.5] mt-1 overflow-hidden text-ellipsis whitespace-nowrap" style="color:var(--color-body)">{{ . }}</span>{{ end }}
+        </span>
+        <span class="font-mono font-medium text-[10.5px] text-right" style="color:{{ if $series }}var(--color-heather){{ else }}var(--color-mono-muted){{ end }}">
+          {{ if $series }}{{ $series }}{{ else }}{{ with $p.Params.tags }}#{{ lower (index . 0) }}{{ end }}{{ end }}
+        </span>
+      </a>
+      {{ end }}
     </div>
     {{ else }}
-    <p class="text-tlgray-500 italic">No posts yet.</p>
+    <p class="font-serif italic" style="color:var(--color-serif-muted)">No posts yet.</p>
     {{ end }}
+
+  </div>
 </div>
 {{ end }}
 
 {{ define "scripts" }}
-{{ if gt (len .Pages) 0 }}
+{{ if gt (len (where .Site.RegularPages "Section" "blog")) 0 }}
 <script>
 (function () {
   var filterBar = document.getElementById('blog-filters');
-  var grid = document.getElementById('blog-grid');
-  if (!filterBar || !grid) return;
-  var buttons = filterBar.querySelectorAll('.blog-filter-btn');
-  var cards = grid.querySelectorAll('.blog-card');
+  var rowsWrap = document.getElementById('blog-rows');
+  if (!filterBar || !rowsWrap) return;
+  var chips = filterBar.querySelectorAll('[data-filter-type]');
+  var rows = rowsWrap.querySelectorAll('a[data-series]');
 
-  function setActive(activeBtn) {
-    buttons.forEach(function (b) {
-      b.classList.remove('is-active', 'bg-blue-600', 'text-white', 'border-blue-600');
-      b.classList.add('border-tlgray-400', 'text-tlgray-700');
-    });
-    activeBtn.classList.add('is-active', 'bg-blue-600', 'text-white', 'border-blue-600');
-    activeBtn.classList.remove('border-tlgray-400', 'text-tlgray-700');
+  var ACTIVE = { background: 'var(--color-ink)', color: 'var(--color-heather-tint)', borderColor: 'transparent' };
+  var INACTIVE = { background: 'transparent', color: 'var(--color-serif-muted)', borderColor: 'var(--color-border-strong)' };
+
+  function styleChip(chip, active) {
+    var s = active ? ACTIVE : INACTIVE;
+    chip.style.background = s.background;
+    chip.style.color = s.color;
+    if (chip.dataset.filterType !== 'all') chip.style.borderColor = s.borderColor;
   }
 
-  function applyFilter(filter) {
-    cards.forEach(function (card) {
-      var categories = (card.dataset.categories || '').split(' ');
-      card.style.display = (filter === 'all' || categories.indexOf(filter) !== -1) ? '' : 'none';
+  function apply(type, value) {
+    rows.forEach(function (row) {
+      var show = type === 'all' ||
+        (type === 'series' && row.dataset.series === value) ||
+        (type === 'tag' && row.dataset.tags.split('|').indexOf(value) !== -1);
+      row.style.display = show ? '' : 'none';
+    });
+    chips.forEach(function (chip) {
+      var match = chip.dataset.filterType === type && (type === 'all' || chip.dataset.filterValue === value);
+      styleChip(chip, match);
     });
   }
 
-  buttons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      setActive(btn);
-      applyFilter(btn.dataset.filter);
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function (e) {
+      e.preventDefault();
+      apply(chip.dataset.filterType, chip.dataset.filterValue);
+      history.replaceState(null, '', chip.getAttribute('href'));
     });
   });
 
-  // Deep-link support: /blog/?category=<slug> pre-selects the matching filter.
   var params = new URLSearchParams(window.location.search);
-  var requestedCategory = params.get('category');
-  if (requestedCategory) {
-    var normalized = decodeURIComponent(requestedCategory).toLowerCase();
-    var match = null;
-    buttons.forEach(function (b) {
-      if (b.dataset.filter.toLowerCase() === normalized) match = b;
-    });
-    if (match) {
-      setActive(match);
-      applyFilter(match.dataset.filter);
-    }
-  }
+  var seriesParam = params.get('series');
+  var tagParam = params.get('tag');
+  var initialType = 'all', initialValue = '';
+  if (seriesParam) { initialType = 'series'; initialValue = seriesParam.toLowerCase(); }
+  else if (tagParam) { initialType = 'tag'; initialValue = tagParam.toLowerCase(); }
+
+  var matched = initialType === 'all' || Array.prototype.some.call(chips, function (c) {
+    return c.dataset.filterType === initialType && c.dataset.filterValue === initialValue;
+  });
+  if (!matched) { initialType = 'all'; initialValue = ''; }
+  apply(initialType, initialValue);
 })();
 </script>
 {{ end }}

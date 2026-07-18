@@ -1,100 +1,32 @@
-{{ define "meta_tags" }}
-
-<meta property="og:site_name" content="{{ .Site.Title }}" />
-<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="{{ .Permalink }}" />
-<meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="{{ .Title }}">
-
-{{ if .Params.image }}
-{{ with .Params.image }}
-<meta property="og:image" content="{{ . | absURL }}">
-{{ end }}
-{{ else }}
-<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image | absURL }}">
-{{ end }}
-
-{{- if .Description }}
-<meta name="description" content="{{ .Description }}" />
-<meta property="og:description" content="{{ .Description }}" />
-<meta property="twitter:description" content="{{ .Description }}" />
-{{- else if .Params.tagline }}
-<meta name="description" content="{{ .Params.tagline }}" />
-<meta property="og:description" content="{{ .Params.tagline }}" />
-<meta property="twitter:description" content="{{ .Params.tagline }}" />
-{{- else if .Summary }}
-<meta name="description" content="{{ .Summary }}" />
-<meta property="og:description" content="{{ .Summary }}" />
-<meta property="twitter:description" content="{{ .Summary }}" />
-{{- end }}
-
-{{ end }}
-
 {{ define "main" }}
-<div class="mx-auto my-10 max-w-6xl px-4 sm:px-6 lg:px-8">
-  <article>
-    <header class="mb-8 text-center md:text-left">
-        {{ if .Params.image }}
-        {{ partial "page-image.html" (dict "src" .Params.image "alt" .Title "context" "banner") }}
-        {{ end }}
 
-        {{ with .Params.offering_type }}
-        <span class="inline-block text-xs font-semibold uppercase tracking-wide px-3 py-1 mb-4 bg-tlgray-200 text-tlgray-700">{{ . }}</span>
-        {{ end }}
+<div class="px-6 sm:px-12 py-10 lg:py-11">
+  <article class="max-w-[660px] mx-auto">
 
-        {{ with .Params.price }}
-        <span class="inline-block text-sm font-semibold text-blue-600 border border-blue-600 px-4 py-1 mb-4">{{ . }}</span>
-        {{ end }}
+    <div class="font-mono font-medium text-[11px] tracking-[.12em] mb-3.5" style="color:var(--color-mono-label)">~/OFFERINGS/{{ upper .File.ContentBaseName }}</div>
 
-        <h1 class="text-3xl md:text-5xl font-extrabold text-tlgray-800 mb-6 leading-tight">{{ .Title }}</h1>
-
-        {{ with .Params.tagline }}
-        <p class="text-xl text-tlgray-700 mb-6">{{ . }}</p>
-        {{ end }}
-
-        <div class="flex flex-wrap items-center justify-center md:justify-start text-sm text-tlgray-500 gap-6 mb-6 border-b border-tlgray-200 pb-6">
-            {{ if .Date }}
-            <div class="flex items-center">
-                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-            </div>
-            {{ end }}
-        </div>
-
-        {{ if or .Params.cta_primary_url .Params.cta_secondary_url }}
-        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            {{ with .Params.cta_primary_url }}
-            <a href="{{ . | relURL }}" class="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors">
-                {{ $.Params.cta_primary_label | default "Get Started" }}
-            </a>
-            {{ end }}
-            {{ with .Params.cta_secondary_url }}
-            <a href="{{ . | relURL }}" class="inline-flex items-center justify-center px-8 py-3 border border-tlgray-400 text-tlgray-800 font-semibold hover:bg-tlgray-200/40 transition-colors">
-                {{ $.Params.cta_secondary_label | default "Contact Us" }}
-            </a>
-            {{ end }}
-        </div>
-        {{ end }}
-    </header>
-
-    <div class="content prose prose-lg max-w-none text-tlgray-700 leading-relaxed mx-auto mb-12">
-        {{ .Content }}
-    </div>
-
-    {{ if or .Params.cta_primary_url .Params.cta_secondary_url }}
-    <div class="flex flex-col sm:flex-row gap-4 justify-center border-t border-tlgray-200 pt-8">
-        {{ with .Params.cta_primary_url }}
-        <a href="{{ . | relURL }}" class="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors">
-            {{ $.Params.cta_primary_label | default "Get Started" }}
-        </a>
-        {{ end }}
-        {{ with .Params.cta_secondary_url }}
-        <a href="{{ . | relURL }}" class="inline-flex items-center justify-center px-8 py-3 border border-tlgray-400 text-tlgray-800 font-semibold hover:bg-tlgray-200/40 transition-colors">
-            {{ $.Params.cta_secondary_label | default "Contact Us" }}
-        </a>
-        {{ end }}
+    {{ if or .Params.offering_type .Params.price }}
+    <div class="flex items-center gap-2.5 mb-3">
+      {{ with .Params.offering_type }}{{ partial "category-badge.html" . }}{{ end }}
+      {{ with .Params.price }}<span class="font-mono font-medium text-[10.5px] px-[11px] py-1" style="border:1px solid var(--color-border-strong);border-radius:var(--radius-chip);color:var(--color-heather)">{{ . }}</span>{{ end }}
     </div>
     {{ end }}
+
+    <h1 class="font-sans font-semibold text-[30px] tracking-[-.01em] mb-2" style="color:var(--color-ink)">{{ .Title }}</h1>
+    {{ with .Params.tagline }}<p class="font-serif italic text-[17px] leading-[1.5] mb-5" style="color:var(--color-serif-muted)">{{ . }}</p>{{ end }}
+
+    <div class="mb-[26px]">{{ partial "offering-cta.html" . }}</div>
+
+    <div class="prose max-w-none mb-[26px]">
+      {{ .Content }}
+    </div>
+
+    {{ partial "offering-cta.html" . }}
+
   </article>
 </div>
+{{ end }}
+
+{{ define "scripts" }}
+{{ partial "lightbox.html" . }}
 {{ end }}

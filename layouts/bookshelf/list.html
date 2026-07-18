@@ -1,46 +1,66 @@
 {{ define "main" }}
-<div class="mx-auto my-10 max-w-6xl px-4 sm:px-6 lg:px-8">
-    <header class="mb-8 text-center md:text-left">
-        <h1 class="text-3xl md:text-5xl font-extrabold text-tlgray-800 mb-6 leading-tight">{{ .Title }}</h1>
-    </header>
 
-    <div class="content prose prose-lg max-w-none text-tlgray-700 mb-10">{{ .Content }}</div>
+{{ $categories := slice "Formative" "Inspirations" "In Progress" "Backlog" "Recommendations" "Reviews" }}
+{{ $glosses := dict "Formative" "shaped how I think" "Inspirations" "sparked ideas or direction" "In Progress" "currently reading" "Backlog" "want to read" "Recommendations" "worth a look" "Reviews" "full write-ups" }}
+{{ $allPages := .Pages.ByWeight }}
+{{ $uncategorized := where .Pages "Params.category" "not in" $categories }}
 
-    {{ $categories := slice "Formative" "Inspirations" "In Progress" "Backlog" "Recommendations" "Reviews" }}
-    {{ $allPages := .Pages.ByWeight }}
-    {{ $uncategorized := where .Pages "Params.category" "not in" $categories }}
+{{ $shelves := slice }}
+{{ range $categories }}{{ if gt (len (where $.Pages "Params.category" .)) 0 }}{{ $shelves = $shelves | append . }}{{ end }}{{ end }}
+{{ if gt (len $uncategorized) 0 }}{{ $shelves = $shelves | append "Uncategorized" }}{{ end }}
 
-    {{ if gt (len $allPages) 0 }}
-    <div id="bookshelf-filters" class="flex flex-wrap gap-2 mb-8">
-        <button type="button" class="bookshelf-filter-btn is-active px-4 py-2 text-sm font-semibold border border-blue-600 bg-blue-600 text-white transition-colors" data-filter="all">
-            All
-        </button>
-        {{ range $categories }}
-            {{ $cat := . }}
-            {{ if gt (len (where $.Pages "Params.category" $cat)) 0 }}
-            <button type="button" class="bookshelf-filter-btn px-4 py-2 text-sm font-semibold border border-tlgray-400 text-tlgray-700 hover:bg-tlgray-200/40 transition-colors" data-filter="{{ $cat }}">
-                {{ $cat }}
-            </button>
-            {{ end }}
-        {{ end }}
-        {{ if gt (len $uncategorized) 0 }}
-        <button type="button" class="bookshelf-filter-btn px-4 py-2 text-sm font-semibold border border-tlgray-400 text-tlgray-700 hover:bg-tlgray-200/40 transition-colors" data-filter="Uncategorized">
-            Uncategorized
-        </button>
-        {{ end }}
+<div class="px-6 sm:px-12 py-10 lg:py-11">
+  <div class="max-w-[1000px] mx-auto">
+
+    {{ partial "page-head.html" (dict "path" "~/BOOKSHELF" "title" "What shapes us" "deck" (printf "The thinking I read, argue with, and build on — %d books across %d shelves." (len $allPages) (len $shelves))) }}
+
+    {{ if gt (len $shelves) 1 }}
+    <div id="bookshelf-filters" class="flex flex-wrap gap-2 mb-7 font-mono font-medium text-[11px]">
+      <button type="button" data-filter="all" class="bookshelf-filter-btn is-active px-[11px] py-[5px]" style="background:var(--color-ink);color:var(--color-heather-tint);border-radius:var(--radius-chip)">all</button>
+      {{ range $shelves }}
+      <button type="button" data-filter="{{ . }}" class="bookshelf-filter-btn px-[11px] py-[5px] border" style="border-color:var(--color-border-strong);color:var(--color-serif-muted);border-radius:var(--radius-chip)">{{ lower . }}</button>
+      {{ end }}
     </div>
-
-    <div id="bookshelf-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {{ range $allPages }}
-        {{ .Render "summary" }}
-        {{ end }}
-    </div>
-    {{ else }}
-    <p class="text-tlgray-500 italic">
-        No book pages yet. Add one with
-        <code>hugo new --kind book_review_template content/bookshelf/your-book-slug.md</code>.
-    </p>
     {{ end }}
+
+    <div id="bookshelf-shelves">
+      {{ range $categories }}
+      {{ $cat := . }}
+      {{ $pages := where $.Pages "Params.category" $cat }}
+      {{ if gt (len $pages) 0 }}
+      <div data-shelf="{{ $cat }}" class="bookshelf-shelf">
+        <div class="flex items-baseline gap-3 border-b-2 pb-2 mb-3 mt-8 first:mt-0" style="border-color:var(--color-ink)">
+          <span class="font-mono font-medium text-[11px] tracking-[.12em]" style="color:var(--color-mono-label)">{{ upper $cat }}</span>
+          <span class="font-mono text-[11px]" style="color:var(--color-mono-muted)">{{ index $glosses $cat }}</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
+          {{ range $i, $b := $pages }}
+          {{ partial "bookshelf-card.html" (dict "page" $b "index" $i "category" $cat) }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+
+      {{ if gt (len $uncategorized) 0 }}
+      <div data-shelf="Uncategorized" class="bookshelf-shelf">
+        <div class="flex items-baseline gap-3 border-b-2 pb-2 mb-3 mt-8" style="border-color:var(--color-ink)">
+          <span class="font-mono font-medium text-[11px] tracking-[.12em]" style="color:var(--color-mono-label)">UNCATEGORIZED</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
+          {{ range $i, $b := $uncategorized }}
+          {{ partial "bookshelf-card.html" (dict "page" $b "index" $i "category" "Uncategorized") }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    {{ if eq (len $allPages) 0 }}
+    <p class="font-serif italic" style="color:var(--color-serif-muted)">No book pages yet.</p>
+    {{ end }}
+
+  </div>
 </div>
 {{ end }}
 
@@ -49,27 +69,28 @@
 <script>
 (function () {
   var filterBar = document.getElementById('bookshelf-filters');
-  var grid = document.getElementById('bookshelf-grid');
-  if (!filterBar || !grid) return;
+  var wrap = document.getElementById('bookshelf-shelves');
+  if (!filterBar || !wrap) return;
   var buttons = filterBar.querySelectorAll('.bookshelf-filter-btn');
-  var cards = grid.querySelectorAll('.bookshelf-card');
+  var shelves = wrap.querySelectorAll('.bookshelf-shelf');
 
-  function setActive(activeBtn) {
-    buttons.forEach(function (b) {
-      b.classList.remove('is-active', 'bg-blue-600', 'text-white', 'border-blue-600');
-      b.classList.add('border-tlgray-400', 'text-tlgray-700');
-    });
-    activeBtn.classList.add('is-active', 'bg-blue-600', 'text-white', 'border-blue-600');
-    activeBtn.classList.remove('border-tlgray-400', 'text-tlgray-700');
+  var ACTIVE = { background: 'var(--color-ink)', color: 'var(--color-heather-tint)', borderColor: 'transparent' };
+  var INACTIVE = { background: 'transparent', color: 'var(--color-serif-muted)', borderColor: 'var(--color-border-strong)' };
+
+  function styleBtn(btn, active) {
+    var s = active ? ACTIVE : INACTIVE;
+    btn.style.background = s.background;
+    btn.style.color = s.color;
+    if (btn.dataset.filter !== 'all') btn.style.borderColor = s.borderColor;
   }
 
   buttons.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      setActive(btn);
       var filter = btn.dataset.filter;
-      cards.forEach(function (card) {
-        card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+      shelves.forEach(function (shelf) {
+        shelf.style.display = (filter === 'all' || shelf.dataset.shelf === filter) ? '' : 'none';
       });
+      buttons.forEach(function (b) { styleBtn(b, b === btn); });
     });
   });
 })();

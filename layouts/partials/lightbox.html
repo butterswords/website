@@ -1,0 +1,46 @@
+{{/* Click-to-expand for inline prose images. Include from a template's "scripts" block:
+       {{ define "scripts" }}{{ partial "lightbox.html" . }}{{ end }}
+     Progressive enhancement — images remain visible and readable with JS off. */}}
+<script>
+(function () {
+  var images = document.querySelectorAll('.prose img');
+  if (!images.length) return;
+
+  var overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-label', 'Expanded image');
+  overlay.innerHTML = '<button type="button" class="lightbox-close" aria-label="Close">✕</button><img class="lightbox-image" alt="">';
+  document.body.appendChild(overlay);
+
+  var overlayImg = overlay.querySelector('.lightbox-image');
+  var closeBtn = overlay.querySelector('.lightbox-close');
+
+  function open(img) {
+    overlayImg.src = img.currentSrc || img.src;
+    overlayImg.alt = img.alt || '';
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function close() {
+    overlay.classList.remove('is-open');
+    overlayImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  images.forEach(function (img) {
+    img.addEventListener('click', function () { open(img); });
+  });
+
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) close();
+  });
+  closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
+  });
+})();
+</script>

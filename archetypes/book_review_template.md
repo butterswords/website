@@ -41,7 +41,7 @@ front matter above — nothing to add in the body for those.
 Delete this comment block before publishing.
 -->
 
-<div class="bg-tlgray-200/40 border-l-4 border-blue-600 px-6 py-4 mb-8">
+<div class="bluf">
 <strong>TL;DR:</strong> One-sentence verdict — would you tell a friend to read this, and why?
 </div>
 

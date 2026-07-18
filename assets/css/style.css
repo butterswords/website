@@ -1,0 +1,202 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@source "hugo_stats.json";
+
+@theme {
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-serif: 'Newsreader', Georgia, serif;
+
+  --color-paper: #FAF8F4;
+  --color-grid: #EFEBE2;
+  --color-ink: #232D36;
+  --color-body: #33302A;
+  --color-iron: #23272E;
+  --color-iron-tint: #C2C7CE;
+  --color-heather: #574A80;
+  --color-heather-tint: #B9A9E8;
+  --color-chrome: #1C242C;
+  --color-chrome-text: #C4CDD5;
+  --color-chrome-muted: #C2C7CE;
+  --color-chrome-muted-2: #7E8A94;
+  --color-border: #E4DFD5;
+  --color-border-strong: #C9C1B2;
+  --color-hairline: #EDEAE2;
+  --color-card: #ffffff;
+  --color-mono-muted: #9A917F;
+  --color-mono-label: #655B7E;
+  --color-serif-muted: #6E6656;
+  --color-knockout: #FAF8F4;
+  --color-status-completed-bg: #EAF0E6;
+  --color-status-completed-fg: #3F6C3A;
+  --color-status-ongoing-bg: #EFEAF8;
+  --color-status-ongoing-fg: #574A80;
+
+  --color-wash: rgba(253, 252, 250, 0.5);
+  --color-wash-2: rgba(250, 248, 244, 0.6);
+  --color-accent-iron: #23272E;
+  --color-beam-start: #23272E;
+  --color-ring-fill: rgba(250, 248, 244, 0.55);
+  --color-ring-outer: #D8D2C4;
+  --color-ring-mid: #C9B989;
+  --color-ring-inner: #B99B54;
+  --color-ring-center-border: transparent;
+  --color-stripe-a: #EFEAE0;
+  --color-stripe-b: #E4DFD5;
+
+  --radius-card: 6px;
+  --radius-spec: 4px;
+  --radius-chip: 99px;
+  --radius-btn: 4px;
+}
+
+:root[data-theme="dark"] {
+  --color-paper: #141A20;
+  --color-grid: rgba(150, 164, 176, 0.07);
+  --color-ink: #DDE3E8;
+  --color-body: #DDE3E8;
+  --color-card: #1C242C;
+  --color-border: #2A343E;
+  --color-border-strong: #3A4552;
+  --color-hairline: #2A343E;
+  --color-chrome: #0F1419;
+  --color-heather: #B9A9E8;
+  --color-iron: #C2C7CE;
+  --color-knockout: #141A20;
+  --color-mono-label: #B9A9E8;
+  --color-serif-muted: #9AA5AF;
+
+  --color-wash: rgba(150, 164, 176, 0.04);
+  --color-wash-2: rgba(150, 164, 176, 0.05);
+  --color-accent-iron: #7E8A94;
+  --color-beam-start: #6B7684;
+  --color-ring-fill: rgba(150, 164, 176, 0.06);
+  --color-ring-outer: #3A4552;
+  --color-ring-mid: #8A7A4E;
+  --color-ring-inner: #A5904F;
+  --color-ring-center-border: #3A4552;
+  --color-stripe-a: #1C242C;
+  --color-stripe-b: #2A343E;
+  --color-mono-muted: #8C98A3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-body);
+  font-family: var(--font-sans);
+}
+
+.grid-paper {
+  background-color: var(--color-paper);
+  background-image:
+    linear-gradient(var(--color-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+a {
+  color: var(--color-ink);
+}
+a:hover {
+  color: var(--color-heather);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-heather);
+  outline-offset: 2px;
+}
+
+.prose {
+  --tw-prose-body: var(--color-body);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-links: var(--color-heather);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-quotes: var(--color-serif-muted);
+  --tw-prose-quote-borders: var(--color-border-strong);
+  --tw-prose-hr: var(--color-border);
+  --tw-prose-bullets: var(--color-border-strong);
+  --tw-prose-code: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.7;
+}
+.prose h2 {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 600;
+}
+.prose code {
+  font-family: var(--font-mono);
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+.prose .bluf,
+.prose div.border-l-4.border-blue-600 {
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--color-body);
+  background: var(--color-card);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-spec);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+.prose .bluf strong,
+.prose div.border-l-4.border-blue-600 strong {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-mono-label);
+}
+
+.prose img {
+  border-radius: 4px;
+  cursor: zoom-in;
+}
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(20, 20, 24, 0.9);
+}
+.lightbox-overlay.is-open {
+  display: flex;
+}
+.lightbox-overlay .lightbox-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  cursor: default;
+}
+.lightbox-overlay .lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+.lightbox-overlay .lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.18);
+}

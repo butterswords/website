@@ -4,7 +4,6 @@ author = "Nathan Butters"
 locale = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
-theme = "tella"
 enableRobotsTXT = true
 
 # Please enable this feature if the site is available in Japanese, Chinese or Korean.
@@ -16,44 +15,8 @@ enableRobotsTXT = true
   #id = "G-1234567890"
 
 [params]
-showBlog = true
-showSlide = false   # set to false to hide the homepage carousel
-showHero = true          # set to true to show the text+image hero (see data/hero.json)
-showTestimonials = false # set to true to show testimonials below features (see data/testimonials.json)
-mainSections = ['blog']
-googleFonts = true
-
-  [params.logo]
-  main = "img/logo/logo.svg"
-  alt = "butterswords logo"
-
-  # The size parameter is the class name of tailwindcss
-  # https://tailwindcss.com/
-  size = "h-10"
-
   [params.site]
   name = "Navigating tradeoffs between safety and value in system development."
-
-  [params.icon]
-  # If you want to use FontAwesome, set this parameter to true.
-  fontawesome = true
-
-  # You can also use Bootstrap Icons.
-  bootstrap = true
-
-  [params.share]
-  # If you want to use share buttons, set this parameter to true.
-  enable = true
-  # Uncomment and edit to limit which services are shown
-  services = ["linkedin", "mail", "copy"]
-
-  [params.homepage_meta_tags]
-  meta_description = "Navigating tradeoffs between safety and value in system development."
-  meta_og_title = "Butterswords | Where Words >= Swords"
-  meta_og_type = "website"
-  meta_og_url = "http://butterswords.com"
-  meta_og_image = "img/logo/logo.svg"
-  meta_og_description = "Navigating tradeoffs between safety and value in system development."
 
 [menu]
   [[menu.main]]
@@ -91,29 +54,6 @@ googleFonts = true
   name = "Contact"
   url = "/contact/"
   weight = 6
-
-  # Footer Menu
-  [[menu.footer]]
-  name = "Home"
-  url = "/"
-  weight = 1
-
-  [[menu.footer]]
-  name = "Blog"
-  url = "/blog"
-  weight = 2
-
-  [[menu.footer]]
-  name = "Linkedin"
-  url = "https://linkedin.com/in/nathanbutters"
-  pre = "<i class='bi bi-linkedin text'></i>"
-  weight = 2
-
-  [[menu.footer]]
-  name = "Github"
-  url = "https://github.com/butterswords"
-  pre = "<i class='bi bi-github text'></i>"
-  weight = 2
 
 [taxonomies]
 category = "categories"

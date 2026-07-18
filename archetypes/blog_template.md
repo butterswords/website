@@ -26,7 +26,7 @@ instead:
 Delete this comment block before publishing.
 -->
 
-<div class="bg-tlgray-200/40 border-l-4 border-blue-600 px-6 py-4 mb-8">
+<div class="bluf">
 <strong>BLUF:</strong> One or two sentences giving the reader the
 takeaway up front — what happened, what you concluded, or what you
 recommend. Assume they may not read past this box.

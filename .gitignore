@@ -232,3 +232,6 @@ docs/
 docs/adr/
 DRAFT-*
 backup*
+design_handoff_butterswords_theme/
+fixes/
+.claude/

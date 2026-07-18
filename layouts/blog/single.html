@@ -1,92 +1,76 @@
-{{ define "meta_tags" }}
-<meta property="og:title" content="{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}" />
-{{ partial "seo/print.html" . }}
-
-{{- with .Site.Params.facebookAppId }}
-<meta property="fb:app_id" content="{{ . }}" />
-{{- end }}
-<meta name="twitter:title" content="{{ .Title }}">
-
-{{ end }}
 {{ define "main" }}
-<div class="mx-auto my-10 max-w-6xl px-4 sm:px-6 lg:px-8">
-  <article>
-    <header class="mb-8 text-center md:text-left">
-        {{ if .Params.image }}
-        {{ partial "page-image.html" (dict "src" .Params.image "alt" .Title "context" "banner") }}
-        {{ end }}
-        <h1 class="text-3xl md:text-5xl font-extrabold text-tlgray-800 mb-6 leading-tight">{{.Title}}</h1>
+{{ $page := . }}
 
-        <div class="flex flex-wrap items-center justify-center md:justify-start text-sm text-tlgray-500 gap-6 mb-6 border-b border-tlgray-200 pb-6">
-            <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="mr-2" viewBox="0 0 16 16">
-                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
-                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
-                </svg>
-                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006/01/02" }}</time>
-            </div>
+{{ $series := "" }}
+{{ with .Params.series }}{{ with index . 0 }}{{ $series = . }}{{ end }}{{ end }}
 
-            {{ if .Params.author }}
-            <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="mr-2" viewBox="0 0 16 16">
-                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                </svg>
-                <span>{{.Params.author}}</span>
-            </div>
-            {{ end }}
+{{ $seriesPages := slice }}
+{{ $idx := -1 }}
+{{ $total := 0 }}
+{{ if $series }}
+  {{ $seriesPages = (where (where .Site.RegularPages "Section" "blog") "Params.series" "intersect" (slice $series)).ByDate }}
+  {{ $total = len $seriesPages }}
+  {{ range $i, $p := $seriesPages }}
+    {{ if eq $p.RelPermalink $page.RelPermalink }}{{ $idx = $i }}{{ end }}
+  {{ end }}
+{{ end }}
 
-            {{ with .Params.categories }}
-            <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="mr-2" viewBox="0 0 16 16">
-                    <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3m-8.322.12q.322-.119.684-.12h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981z"/>
-                </svg>
-                <div class="flex gap-2">
-                {{ range . }}
-                <a href='{{ "categories" | absURL}}/{{ . | urlize }}' class="hover:text-blue-600 transition-colors">{{ . }}</a>
-                {{ end }}
-                </div>
-            </div>
-            {{ end }}
-        </div>
-    </header>
+{{ $prevPage := "" }}
+{{ $prevLabel := "" }}
+{{ $nextPage := "" }}
+{{ $nextLabel := "" }}
+{{ if ge $idx 0 }}
+  {{ if gt $idx 0 }}
+    {{ $prevPage = index $seriesPages (sub $idx 1) }}
+    {{ $prevLabel = printf "Part %d: %s" $idx $prevPage.Title }}
+  {{ end }}
+  {{ if lt $idx (sub $total 1) }}
+    {{ $nextPage = index $seriesPages (add $idx 1) }}
+    {{ $nextLabel = printf "Part %d: %s" (add $idx 2) $nextPage.Title }}
+  {{ end }}
+{{ end }}
+{{ if not $prevPage }}{{ with .PrevInSection }}{{ $prevPage = . }}{{ $prevLabel = .Title }}{{ end }}{{ end }}
+{{ if not $nextPage }}{{ with .NextInSection }}{{ $nextPage = . }}{{ $nextLabel = .Title }}{{ end }}{{ end }}
 
-    <div class="content prose prose-lg max-w-none text-tlgray-700 leading-relaxed mx-auto mb-12">
-        {{.Content}}
+<div class="px-6 sm:px-12 py-10 lg:py-11">
+  <article class="max-w-[660px] mx-auto">
+
+    <div class="font-mono font-medium text-[11px] tracking-[.12em] mb-3" style="color:var(--color-mono-label)">~/BLOG · {{ .Date.Format "2006-01-02" }}{{ with .Params.author }} · {{ upper . }}{{ end }}</div>
+    <h1 class="font-sans font-semibold text-[30px] leading-[1.2] tracking-[-.01em] mb-2.5" style="color:var(--color-ink)">{{ .Title }}</h1>
+
+    {{ if $series }}
+    <div class="inline-flex items-center gap-2 font-mono font-medium text-[11px] mb-5" style="color:var(--color-heather)">
+      <span class="inline-block" style="width:22px;height:2px;background:var(--color-heather)"></span>
+      SERIES: {{ upper $series }}{{ if ge $idx 0 }} · PART {{ add $idx 1 }} OF {{ $total }}{{ end }}
+    </div>
+    {{ end }}
+
+    <div class="prose max-w-none">
+      {{ .Content }}
     </div>
 
-    {{ partial "share.html" . }}
+    {{ if or .Params.tech_stack .Params.tags }}
+    <div class="flex flex-wrap gap-2 pt-5 mt-6 border-t" style="border-color:var(--color-border)">
+      {{ range .Params.tech_stack }}
+      <span class="font-mono font-medium text-[10.5px] px-[10px] py-1" style="border:1px solid var(--color-border-strong);border-radius:var(--radius-chip);color:var(--color-serif-muted)">stack: {{ . }}</span>
+      {{ end }}
+      {{ range .Params.tags }}
+      <span class="font-mono font-medium text-[10.5px] px-[10px] py-1" style="border:1px solid var(--color-border-strong);border-radius:var(--radius-chip);color:var(--color-serif-muted)">#{{ lower . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
 
-    {{ partial "comments.html" . }}
-
-    <!-- Navigation -->
-    <nav class="mt-12 w-full grid grid-cols-1 md:grid-cols-2 gap-6">
-        {{ with .PrevInSection }}
-        <a href="{{ .Permalink }}" class="group block p-6 border border-tlgray-200 transition-all text-left">
-            <span class="text-sm text-gray-500 font-medium mb-2 block group-hover:text-blue-600">Previous</span>
-            <div class="flex items-center gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-                <span class="text-lg font-bold text-gray-800 group-hover:text-blue-600 transition-colors line-clamp-2">{{ .Title }}</span>
-            </div>
-        </a>
-        {{ else }}
-        <div></div>
-        {{ end }}
-
-        {{ with .NextInSection }}
-        <a href="{{ .Permalink }}" class="group block p-6 border border-tlgray-200 transition-all text-right">
-            <span class="text-sm text-gray-500 font-medium mb-2 block group-hover:text-blue-600">Next</span>
-            <div class="flex items-center justify-end gap-3">
-                <span class="text-lg font-bold text-gray-800 group-hover:text-blue-600 transition-colors line-clamp-2">{{ .Title }}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 shrink-0 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-            </div>
-        </a>
-        {{ end }}
-    </nav>
+    {{ if or $prevPage $nextPage }}
+    <div class="flex justify-between gap-4 mt-6 font-sans font-medium text-[12.5px]" style="color:var(--color-ink)">
+      <span>{{ with $prevPage }}<a href="{{ .RelPermalink }}">← {{ $prevLabel }}</a>{{ end }}</span>
+      <span>{{ with $nextPage }}<a href="{{ .RelPermalink }}">{{ $nextLabel }} →</a>{{ end }}</span>
+    </div>
+    {{ end }}
 
   </article>
 </div>
+{{ end }}
+
+{{ define "scripts" }}
+{{ partial "lightbox.html" . }}
 {{ end }}

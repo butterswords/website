@@ -1,0 +1,11 @@
+{{/* Usage: {{ partial "offering-cta.html" . }} — page context with cta_primary/secondary front matter. */}}
+{{ if or .Params.cta_primary_url .Params.cta_secondary_url }}
+<div class="flex flex-wrap gap-3">
+  {{ with .Params.cta_primary_url }}
+  <a href="{{ . | relURL }}" class="inline-flex px-[22px] py-3 font-sans font-medium text-[13.5px]" style="background:var(--color-ink);color:var(--color-paper);border-radius:var(--radius-btn)">{{ $.Params.cta_primary_label | default "Get started" }}</a>
+  {{ end }}
+  {{ with .Params.cta_secondary_url }}
+  <a href="{{ . | relURL }}" class="inline-flex px-[22px] py-3 font-sans font-medium text-[13.5px] border" style="border-color:var(--color-border-strong);color:var(--color-ink);background:var(--color-paper);border-radius:var(--radius-btn)">{{ $.Params.cta_secondary_label | default "Contact us" }}</a>
+  {{ end }}
+</div>
+{{ end }}

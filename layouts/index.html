@@ -1,47 +1,116 @@
-{{ define "meta_tags" }}
-    <meta name="description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
-    <meta property="og:title" content="{{ .Site.Params.homepage_meta_tags.meta_og_title }}" />
-    <meta property="og:type" content="{{ .Site.Params.homepage_meta_tags.meta_og_type }}" />
-    <meta property="og:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_url }}" />
-    <meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}" />
-    <meta property="og:description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
-    <meta name="twitter:card" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_card }}" />
-    <meta name="twitter:site" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_site }}" />
-    <meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
-{{ end }}
-
 {{ define "main" }}
-    {{- partial "alert.html" . -}}
-    {{ if eq .Site.Params.showHero true }}
-    {{- partial "hero.html" . -}}
-    {{ end }}
-    {{ if ne .Site.Params.showSlide false }}
-    {{- partial "slide.html" . -}}
-    {{ end }}
-    {{- partial "strip.html" . -}}
-    {{ if eq .Site.Params.showTestimonials true }}
-    {{- partial "testimonials.html" . -}}
-    {{ end }}
-    {{ if ne .Site.Params.showBlog false }}
-    <div class="mx-auto my-10 max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl mb-6 font-bold">Blog</h2>
-        {{- partial "recent.html" . -}}
-    </div>
-    {{ end }}
-{{ end }}
 
-{{ define "scripts" }}
-    {{ if ne .Site.Params.showSlide false }}
-    <script src="{{ "/js/splide.min.js" | relURL }}"></script>
-    <script>
-        document.addEventListener( 'DOMContentLoaded', function() {
-            new Splide( '.splide', {
-                type   : 'loop',
-                autoplay: true,
-                interval: 6000,
-                speed: 550,
-            } ).mount();
-        } );
-    </script>
-    {{ end }}
+<section class="px-6 sm:px-12 py-12 lg:py-[68px]">
+  <div class="max-w-[1240px] mx-auto grid gap-12 lg:gap-[52px] lg:grid-cols-[1.12fr_.88fr] items-center">
+
+    <div class="flex flex-col gap-5">
+      <div class="font-mono font-medium text-[11.5px] tracking-[.14em]" style="color:var(--color-mono-label)">NATHAN BUTTERS · SYSTEM SAFETY</div>
+      <h1 class="font-sans font-semibold text-[32px] sm:text-[38px] lg:text-[46px] leading-[1.12] tracking-[-.015em]" style="color:var(--color-ink)">
+        Navigating tradeoffs between <em class="font-serif italic font-semibold" style="color:var(--color-accent-iron)">safety</em> and <em class="font-serif italic font-semibold" style="color:var(--color-heather)">value</em> in system development.
+      </h1>
+      <p class="max-w-[52ch] font-sans text-[16.5px] leading-[1.6]" style="color:var(--color-ink)">I use systems thinking to build for quality at scale in the service of the public good. Systems hurt people when they fail; failure modes should be addressed before shipping them.</p>
+      <div class="flex flex-wrap gap-3.5">
+        <a href="{{ "/projects/" | relURL }}" class="px-[22px] py-3 font-sans font-medium text-sm" style="background:var(--color-ink);color:var(--color-paper);border-radius:var(--radius-btn)">What I've done</a>
+        <a href="{{ "/contact/" | relURL }}" class="px-[22px] py-3 font-sans font-medium text-sm border" style="border-color:var(--color-border-strong);color:var(--color-ink);background:var(--color-paper);border-radius:var(--radius-btn)">Get in touch</a>
+      </div>
+      {{ partial "beam.html" (dict "caption" "each system sits somewhere on this line. Do you know where yours is?" "class" "mt-2") }}
+    </div>
+
+    <div class="flex flex-col items-center gap-3">
+      <div class="relative aspect-square w-[240px] sm:w-[320px]">
+        <div class="absolute inset-0 rounded-full" style="border:1.5px solid var(--color-ring-outer);background:var(--color-ring-fill)"></div>
+        <div class="absolute rounded-full" style="inset:12.8%;border:1.5px solid var(--color-ring-mid)"></div>
+        <div class="absolute rounded-full" style="inset:25.6%;border:1.5px solid var(--color-ring-inner)"></div>
+        <div class="absolute rounded-full flex items-center justify-center text-center font-mono font-medium text-[10.5px] leading-tight" style="inset:38.4%;background:#23272E;color:#B9A9E8;border:1px solid var(--color-ring-center-border)">THE<br>TECHNOLOGY</div>
+        <div class="absolute left-1/2 -translate-x-1/2 font-mono font-medium text-[10px] px-2" style="top:3.5%;color:var(--color-mono-muted);background:var(--color-paper)">SOCIETY</div>
+        <div class="absolute left-1/2 -translate-x-1/2 font-mono font-medium text-[10px] px-2" style="top:16.5%;color:var(--color-mono-label);background:var(--color-paper)">ORGANIZATION</div>
+        <div class="absolute left-1/2 -translate-x-1/2 font-mono font-medium text-[10px] px-2" style="top:29%;color:var(--color-heather);background:var(--color-paper)">PEOPLE</div>
+      </div>
+      <div class="font-mono text-[11.5px] leading-[1.5] text-center max-w-[290px]" style="color:var(--color-mono-muted)">safety exists concentrically — stopping with the smallest part will not make the world a safer place to live, play, and work.</div>
+    </div>
+
+  </div>
+</section>
+
+{{ $posts := first 3 (where .Site.RegularPages "Section" "blog").ByDate.Reverse }}
+{{ $projects := first 3 (where .Site.RegularPages "Section" "projects").ByDate.Reverse }}
+{{ $books := first 4 (where .Site.RegularPages "Section" "bookshelf").ByDate.Reverse }}
+
+<section class="border-t px-6 sm:px-12 py-12 lg:py-[50px]" style="border-color:var(--color-border);background:var(--color-wash)">
+  <div class="max-w-[1240px] mx-auto">
+    <div class="flex items-baseline gap-3.5 flex-wrap mb-7">
+      <span class="font-mono font-medium text-[11.5px] tracking-[.14em]" style="color:var(--color-heather)">01</span>
+      <h2 class="font-sans font-semibold text-[22px]" style="color:var(--color-ink)">The words</h2>
+      <span class="hidden sm:inline font-mono text-xs ml-auto" style="color:var(--color-mono-muted)">writing · projects · what shapes us</span>
+    </div>
+
+    <div class="grid gap-10 lg:grid-cols-[1.15fr_.95fr_.9fr] items-start">
+
+      <div>
+        <div class="font-mono font-medium text-[11px] tracking-[.12em] pb-2 mb-1 border-b-2" style="color:var(--color-mono-label);border-color:var(--color-ink)">RECENT WRITING</div>
+        <div class="flex flex-col">
+          {{ $n := len $posts }}
+          {{ range $i, $p := $posts }}
+          <a href="{{ .RelPermalink }}" class="block py-3.5{{ if lt (add $i 1) $n }} border-b{{ end }}" style="border-color:var(--color-border)">
+            <div class="font-sans font-medium text-[15.5px]" style="color:var(--color-ink)">{{ .Title }}</div>
+            <div class="font-mono text-[11.5px] mt-1" style="color:var(--color-mono-muted)">{{ .Date.Format "2006-01-02" }}{{ with .Params.series }}{{ with index . 0 }} · series: {{ . }}{{ end }}{{ end }}</div>
+          </a>
+          {{ end }}
+        </div>
+        <a href="{{ "/blog/" | relURL }}" class="inline-block font-sans font-medium text-xs underline underline-offset-[3px] mt-1.5" style="color:var(--color-iron)">Posts →</a>
+      </div>
+
+      <div>
+        <div class="font-mono font-medium text-[11px] tracking-[.12em] pb-2 mb-3 border-b-2" style="color:var(--color-mono-label);border-color:var(--color-ink)">DISCLOSED PROJECTS</div>
+        <div class="flex flex-col gap-2.5">
+          {{ range $projects }}
+          <a href="{{ .RelPermalink }}" class="flex items-center gap-3 p-2.5" style="background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-card)">
+            {{ with .Params.image }}
+            <img src="{{ . | relURL }}" alt="" loading="lazy" class="flex-none w-14 h-10 object-cover" style="border-radius:4px">
+            {{ else }}
+            <div class="flex-none w-14 h-10 flex items-center justify-center font-mono text-[8px]" style="border-radius:4px;background:repeating-linear-gradient(45deg,var(--color-stripe-a),var(--color-stripe-a) 6px,var(--color-stripe-b) 6px,var(--color-stripe-b) 12px);color:var(--color-mono-muted)">img</div>
+            {{ end }}
+            <div class="font-sans font-medium text-[13.5px]" style="color:var(--color-ink)">{{ .Title }}</div>
+          </a>
+          {{ end }}
+        </div>
+        <a href="{{ "/projects/" | relURL }}" class="inline-block font-sans font-medium text-xs underline underline-offset-[3px] mt-3" style="color:var(--color-iron)">All projects →</a>
+      </div>
+
+      <div>
+        <div class="font-mono font-medium text-[11px] tracking-[.12em] pb-2 mb-3 border-b-2" style="color:var(--color-mono-label);border-color:var(--color-ink)">WHAT SHAPES US</div>
+        <p class="font-serif italic text-[13px] leading-[1.55] mb-3.5" style="color:var(--color-serif-muted)">The bookshelf — what I read, argue with, and build upon.</p>
+        <div class="flex flex-col gap-1.5">
+          {{ range $i, $b := $books }}
+          <a href="{{ .RelPermalink }}" class="flex items-center gap-2.5 py-2.5 px-3 font-serif text-[13px]" style="background:var(--color-card);border:1px solid var(--color-border);border-left:3px solid {{ if eq (mod $i 2) 0 }}var(--color-heather){{ else }}var(--color-accent-iron){{ end }};border-radius:4px;color:var(--color-ink)">{{ .Title }}</a>
+          {{ end }}
+        </div>
+        <a href="{{ "/bookshelf/" | relURL }}" class="inline-block font-sans font-medium text-xs underline underline-offset-[3px] mt-3" style="color:var(--color-iron)">The whole shelf →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{{ $offerings := first 3 (where .Site.RegularPages "Section" "offerings").ByWeight }}
+
+<section class="border-t px-6 sm:px-12 py-12 lg:py-[56px]" style="border-color:var(--color-border);background:var(--color-wash-2)">
+  <div class="max-w-[1240px] mx-auto">
+    <div class="flex items-baseline gap-3.5 mb-7">
+      <span class="font-mono font-medium text-[11.5px] tracking-[.14em]" style="color:var(--color-heather)">02</span>
+      <h2 class="font-sans font-semibold text-[22px]" style="color:var(--color-ink)">The work</h2>
+    </div>
+    <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+      {{ range $offerings }}
+      <div class="flex flex-col gap-2.5 p-[22px]" style="background:var(--color-card);border:1px solid var(--color-border);border-radius:var(--radius-card)">
+        <div class="font-sans font-semibold text-[15.5px]" style="color:var(--color-ink)">{{ .Title }}</div>
+        <p class="font-sans text-[13.5px] leading-[1.55]" style="color:var(--color-ink)">{{ .Params.description }}</p>
+      </div>
+      {{ end }}
+    </div>
+    <!--<div class="mt-4 font-mono text-xs" style="color:var(--color-mono-muted)">// <a href="{{ "/offerings/" | relURL }}" style="color:var(--color-ink)">full offerings page</a> in the works — <a href="{{ "/contact/" | relURL }}" class="underline" style="color:var(--color-ink)">get in touch</a> in the meantime</div> -->
+    <div class="mt-4 font-mono text-xs" style="color:var(--color-mono-muted)">// full offerings page in the works — <a href="{{ "/contact/" | relURL }}" class="underline" style="color:var(--color-ink)">get in touch</a> in the meantime</div>
+  </div>
+</section>
+
 {{ end }}

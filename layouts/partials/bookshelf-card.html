@@ -1,0 +1,16 @@
+{{/* Usage: {{ partial "bookshelf-card.html" (dict "page" $b "index" $i "category" $cat) }} */}}
+{{ $b := .page }}
+{{ $i := .index }}
+{{ $cat := .category }}
+{{ $hasBody := gt (len (trim $b.Plain " \t\n")) 0 }}
+{{ $href := $b.RelPermalink }}
+{{ $external := false }}
+{{ if and (not $hasBody) $b.Params.external_url }}{{ $href = $b.Params.external_url }}{{ $external = true }}{{ end }}
+<a href="{{ $href }}"{{ if $external }} target="_blank" rel="noopener"{{ end }} class="flex flex-col gap-1 p-4" style="background:var(--color-card);border:1px solid var(--color-border);border-left:3px solid {{ if eq (mod $i 2) 0 }}var(--color-heather){{ else }}var(--color-iron){{ end }};border-radius:4px">
+  <span class="font-serif font-medium text-[14.5px]" style="color:var(--color-ink)">{{ $b.Title }}</span>
+  {{ if $b.Params.rating }}
+  <span class="font-mono text-[11px]" style="color:var(--color-heather)">★ {{ $b.Params.rating }}{{ if eq $cat "Reviews" }} · reviewed{{ end }}</span>
+  {{ else }}
+  <span class="font-mono text-[11px]" style="color:var(--color-mono-muted)">{{ $b.Params.author }}</span>
+  {{ end }}
+</a>

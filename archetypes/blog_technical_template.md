@@ -21,7 +21,7 @@ system, tool, or technique.
 Delete this comment block before publishing.
 -->
 
-<div class="bg-tlgray-200/40 border-l-4 border-blue-600 px-6 py-4 mb-8">
+<div class="bluf">
 <strong>BLUF:</strong> What you built/tried, what happened, and the
 one thing a busy engineer should remember if they stop reading here.
 </div>
