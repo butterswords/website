@@ -3,9 +3,9 @@
     <a href="{{ "/" | relURL }}" class="inline-flex items-center" aria-label="{{ .Site.Title }} home">
       {{ partial "wordmark.html" . }}
     </a>
-    {{ if .IsHome }}
+    <!--{{ if .IsHome }}
     <span class="hidden sm:inline font-mono text-[10.5px] tracking-[.1em]" style="color:var(--color-chrome-muted-2)">SYSTEM SAFETY DEVELOPMENT, LLC</span>
-    {{ end }}
+    {{ end }} to be added back in when I actually build the LLC--> 
   </div>
   <div class="flex items-center gap-5 sm:gap-6 font-sans font-medium text-[13px]">
     {{- range .Site.Menus.main }}

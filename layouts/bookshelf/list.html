@@ -12,7 +12,7 @@
 <div class="px-6 sm:px-12 py-10 lg:py-11">
   <div class="max-w-[1000px] mx-auto">
 
-    {{ partial "page-head.html" (dict "path" "~/BOOKSHELF" "title" "What shapes us" "deck" (printf "The thinking I read, argue with, and build on — %d books across %d shelves." (len $allPages) (len $shelves))) }}
+    {{ partial "page-head.html" (dict "path" "~/BOOKSHELF" "title" "What shapes us" "deck" (printf "Books I read, argue with, and build on — %d books across %d shelves." (len $allPages) (len $shelves))) }}
 
     {{ if gt (len $shelves) 1 }}
     <div id="bookshelf-filters" class="flex flex-wrap gap-2 mb-7 font-mono font-medium text-[11px]">
