@@ -59,6 +59,7 @@ Support one another with courage and compassion; prioritize the shared good to a
 ~ Nathan Butters, 2010 [^1] 
 
 > Do what you can, with what you've got, where you are.
+
 ~ Theodore Roosevelt [^TR]
 
 > True heroism is remarkably sober, very undramatic. It is not the urge to surpass all others at whatever cost, but the urge to serve others at whatever cost.
