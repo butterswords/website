@@ -13,10 +13,14 @@ weight: 100
 ---
 
 <div class="bg-tlgray-200/40 border-l-4 border-blue-600 px-6 py-4 mb-8">
-<strong>BLUF:</strong> Requirements engineering has increased in importance in challenging ways at the pace of <em>AI</em>. It's on those of us who design and build products and systems to find the path forward.
+<strong>BLUF:</strong> Requirements engineering has increased in importance in challenging ways at the pace of <em>AI</em>. Learn from those who came before. Adapt what exists to your context and needs. It's on those of us who design and build products and systems to find the path forward. We must not pretend the use cases are so novel, or that we are so smart, as to be the only ones who can figure it out.
 </div>
 
-One company I interviewed for asked me to build a demo over the course of a week. They chose a problem space central to their mission, and which I knew very little about. They gave me the assignment on Monday morning, and wanted me to complete it within 5 business days. I gave myself the goal of getting it done by Friday night so I could enjoy Father's Day with my son. This meant I had under 5 business days to research, design, and implement the demo. I then had to record a 10 minute demo and prepare for a follow up debrief. I decided to use the Claude systems to organize and execute the project because of a conversation with a friend about the [usefulness of agents]("blog/agent-usefulness.md") . It felt like a good, "core" use case to explore. It proved informative.
+One company I interviewed for asked me to build a demo over the course of a week. They chose a problem space central to their mission, and which I knew very little about. They gave me the assignment on Monday morning, and wanted me to complete it within 5 business days. I gave myself the goal of getting it done by Friday night so I could enjoy Father's Day with my son. This meant I had under 5 business days to research, design, and implement the demo. I then had to record a 10 minute demo and prepare for a follow up debrief. I decided to use the Claude systems to organize and execute the project because of a conversation with a friend about the [usefulness of agents]("blog/agent-usefulness.md") . It felt like a good, "core" use case to explore. 
+
+It proved informative. 
+
+This post focuses on my experience. For more information on the demo, and the video, check out the [project page](/projects/aml-workflow-automation-demo/).
 
 ## Pre-work
 I read the materials provided and set up the product brief with a template I built years ago. This put initial shape to my plans and freed me up to explore the domain and problem space. I realized there would be a steep learning curve in the domain of AML. This gave me pause. I needed a strategy for completing the task within a week.
@@ -65,34 +69,11 @@ I gained confidence in my ability to guide the model towards my desired end stat
 
 ### Scaling to hundreds of scenarios and thousands of rules
 
-I knew I needed to shape the experience to accomodate the scale required by the context. My initial research uncovered a non-exhuastive list of 20 typologies. They came from regulatory bodies, industry documents, and best practices. I leveraged the Claude systems to stand in for the experts I'd talk with to learn more, due to constraints I faced. It worked well enough. I would not want to rely on it in a production environment. Claude often sounded confident in its finding without providing direct rationale for inclusion. It seemed to ignore my request to provide reference links for all the information. Below are the typologies I ended up using:
-
-| # | Name | Category | Default Severity |
-|---|------|----------|-----------------|
-| T-01 | Structuring (Smurfing) | AML — Placement | High |
-| T-02 | Layering | AML — Layering | High |
-| T-03 | Integration | AML — Integration | High |
-| T-04 | Funnel Account / Aggregation | AML — Network | High |
-| T-05 | Round-Tripping | AML — Network | Medium |
-| T-06 | Loan-Back | AML — Network | Medium |
-| T-07 | Shell Company / Beneficial Ownership Concealment | AML — Entity | High |
-| T-08 | Trade-Based Money Laundering (TBML) | AML — Trade | High |
-| T-09 | Professional Money Laundering Network (PMLN) | AML — Network | High |
-| T-10 | Real Estate Laundering | AML — Asset | Medium |
-| T-11 | Virtual Asset / Cryptocurrency Layering | AML — Asset | High |
-| T-12 | Casino / Gambling Laundering | AML — Asset | Medium |
-| T-13 | Bulk Cash Smuggling | AML — Placement | Medium |
-| T-14 | Account Takeover (ATO) | Fraud | High |
-| T-15 | Synthetic Identity Fraud | Fraud | High |
-| T-16 | Authorized Push Payment (APP) Fraud | Fraud | High |
-| T-17 | Business Email Compromise (BEC) | Fraud | High |
-| T-18 | Card-Not-Present (CNP) Fraud | Fraud | Medium |
-| T-19 | First-Party / Bust-Out Fraud | Fraud | Medium |
-| T-20 | Mule Account Network | Fraud + AML | High |
+I knew I needed to shape the experience to accomodate the scale required by the context. My initial research uncovered a non-exhuastive list of 20 typologies. They came from regulatory bodies, industry documents, and best practices. I leveraged the Claude systems to stand in for the experts I'd talk with to learn more, due to constraints I faced. It worked well enough. I would not want to rely on it in a production environment. Claude often sounded confident in its finding without providing direct rationale for inclusion. It seemed to ignore my request to provide reference links for all the information. 
 
 <img src="/img/AML_DEMO_left_bar.png" alt="Scenario builder page focused on the search and filter of rules and scenarios." class="float-left w-full sm:w-1/2 sm:mr-6 mb-4 rounded">
 
-From this list of 20 typologies I had the Claude system build over 100 rules and mock up 12 scenarios. This supported exploring different ways to organize the information for the analyst. The other requirements, and my limited knowledge of the space, led to building within the scenario builder page rather than creating a dedicated rules page. The combination of search and filtering created a means of guiding an analyst to the most appropriate rules for their needs. As it exists, I feel it needs an analyst's knowledge to use it. This is becuase I limited the experience to searching based on fields in the rules as well as a drop down of all available typologies. 
+From the [list of 20 typologies]("/projects/aml-workflow-automation-demo/#typologies) I had the Claude system build over 100 rules and mock up 12 scenarios. This supported exploring different ways to organize the information for the analyst. The other requirements, and my limited knowledge of the space, led to building within the scenario builder page rather than creating a dedicated rules page. The combination of search and filtering created a means of guiding an analyst to the most appropriate rules for their needs. As it exists, I feel it needs an analyst's knowledge to use it. This is becuase I limited the experience to searching based on fields in the rules as well as a drop down of all available typologies. 
 
 The resulting left-side bar split into two collapseable sections. The search and filters applied to both the scenarios and rules. This allowed for quick filtering and sorting to identify any given rule or scenario in a matter of seconds. It would scale to hundreds or thousands of entries. The analyst could find what they needed and either edit it or drag it into the scenario they were working on. They could also see if scenarios matched rules or typologies they needed to work with. I felt confident it would be a win. I was almost right.
 
@@ -124,21 +105,6 @@ During the debrief the interviewers asked me to explain this in more detail. I p
 
 Imagine the industry defines a new typology, or rule within an existing typology. Your organization creates a rule set for detecting activity related to it. How do you know if it works or how effective your previous rule sets were in covering this area without data? You can't. A tracking system, which you pull from, allows you to compare new scenarios with previous ones. It also allows you to mine data based on dimensions to test the performance of each scenario.
 
-## Other critical choices in brief
-
-I cannot recount all the choices I made for the demo so I will share a few choice ones for you to think through:
-
-1) Keep all interactions within the same panel using modals
-2) Provide explanations for all agent and LLM-generated content, grounded in core data
-3) Leverage search, sorting, and filtering to improve support analysts' preferences
-4) All records should be accessible in under 5 clicks
-5) All pages and experiences should be grockable in under 10 seconds
-6) Analysts hold final responsiblility for all decisions. Never sideline them.
-7) Supporting leaders in identifying bottlenecks supports analysts doing their best work.
-8) Keep the health of the technology visible so leaders can diagnose issues with speed.
-
 ## Some final thoughts
 
 I enjoyed the experience of building this demo. The first day was rough for me. Yet, when I reclaimed my place to use Claude the way I needed to it became much better. I am not sold on this technology providing efficiency gains, or even value, beyond exploratory phases. I will continue to reflect on my experience and the other ways I use this technology. 
-
-For more information on the demo, and the video, check out the [project page](/projects/aml-workflow-automation-demo/).

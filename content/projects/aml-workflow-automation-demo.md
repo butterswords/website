@@ -55,7 +55,7 @@ I focus on live testing and validation because these technologies require both a
 
 Below are a few of the more important inputs I came up with to drive the work.
 
-#### Assumptions
+### Assumptions
 * AML can use similar workflows to security and T+S work
 * Finance institutions are conservative in their adoption of ML and LLMs due to incentives and regulations
 * All work should be traceable and have clear chain of custody
@@ -63,18 +63,57 @@ Below are a few of the more important inputs I came up with to drive the work.
 * The orchestration workflow experience doesn't matter if it does not feed into other parts of the process seamlessly
 * Testing on real data is necessary for trusting new scenarios and rules 
 
-#### Pillars
+### Pillars
 * Speed of resolution
 * Clarity through traceability
 * Ease of use for analysts, leads, and reviewers
 
-#### Key Capabilities
+### Key Capabilities
 * Uses deterministic processes where possible to provide real time insight
 * Detections and alerts are communicated directly in your flow of work according to their severity
 * Progressive disclosure calibrated to user needs and allowing for directional exploration
 * Agents provide support for human expertise, they do not replace it
 * Enables a choice of models to fit the regulatory needs of each customer
 * Includes an iterative testing capability, using historical data, to support new scenarios and alerts
+
+### Typologies
+Below are the typologies I ended up using for filtering and scenario building:
+
+| # | Name | Category | Default Severity |
+|---|------|----------|-----------------|
+| T-01 | Structuring (Smurfing) | AML — Placement | High |
+| T-02 | Layering | AML — Layering | High |
+| T-03 | Integration | AML — Integration | High |
+| T-04 | Funnel Account / Aggregation | AML — Network | High |
+| T-05 | Round-Tripping | AML — Network | Medium |
+| T-06 | Loan-Back | AML — Network | Medium |
+| T-07 | Shell Company / Beneficial Ownership Concealment | AML — Entity | High |
+| T-08 | Trade-Based Money Laundering (TBML) | AML — Trade | High |
+| T-09 | Professional Money Laundering Network (PMLN) | AML — Network | High |
+| T-10 | Real Estate Laundering | AML — Asset | Medium |
+| T-11 | Virtual Asset / Cryptocurrency Layering | AML — Asset | High |
+| T-12 | Casino / Gambling Laundering | AML — Asset | Medium |
+| T-13 | Bulk Cash Smuggling | AML — Placement | Medium |
+| T-14 | Account Takeover (ATO) | Fraud | High |
+| T-15 | Synthetic Identity Fraud | Fraud | High |
+| T-16 | Authorized Push Payment (APP) Fraud | Fraud | High |
+| T-17 | Business Email Compromise (BEC) | Fraud | High |
+| T-18 | Card-Not-Present (CNP) Fraud | Fraud | Medium |
+| T-19 | First-Party / Bust-Out Fraud | Fraud | Medium |
+| T-20 | Mule Account Network | Fraud + AML | High |
+
+### Other critical choices in brief
+
+I cannot recount all the choices I made for the demo so I will share a few choice ones for you to think through:
+
+1) Keep all interactions within the same panel using modals
+2) Provide explanations for all agent and LLM-generated content, grounded in core data
+3) Leverage search, sorting, and filtering to improve support analysts' preferences
+4) All records should be accessible in under 5 clicks
+5) All pages and experiences should be grockable in under 10 seconds
+6) Analysts hold final responsiblility for all decisions. Never sideline them.
+7) Supporting leaders in identifying bottlenecks supports analysts doing their best work.
+8) Keep the health of the technology visible so leaders can diagnose issues with speed.
 
 ## References
 
