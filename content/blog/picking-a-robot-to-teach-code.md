@@ -7,7 +7,8 @@ description: "How I picked a robot for my kid and some thoughts for other parent
 draft: false
 tags: [
     "robots",
-    "education"
+    "education",
+    "ported"
 ]
 categories: ["Parenting", "PSA"]
 series: []
